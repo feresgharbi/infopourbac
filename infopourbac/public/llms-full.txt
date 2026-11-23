@@ -1,0 +1,1638 @@
+# InfoPourBac : texte intégral du cours
+
+Source : https://infopourbac.netlify.app — mis à jour le 19 novembre 2026.
+
+
+======================================================================
+# Introduction à l'algorithmique et à Python
+URL : https://infopourbac.netlify.app/cours/introduction-algorithmique-python/
+
+Un algorithme est une suite finie et ordonnée d'instructions qui permet de résoudre un problème. Au Bac scientifique en Tunisie, on écrit d'abord la solution sous forme d'algorithme, puis on la traduit en Python , le langage officiel de l'épreuve pratique.
+
+En bref :
+- Algorithme = la solution écrite en langage structuré, indépendante de tout langage de programmation.
+- Programme = la traduction de l'algorithme dans un langage (ici Python 3).
+- Un algorithme commence par Algorithme Nom , contient les instructions entre Début et Fin , et ses objets sont déclarés dans un TDO .
+- Outils à installer : Python 3, l'éditeur Thonny, les bibliothèques numpy et PyQt5 (avec Qt Designer).
+
+## Qu'est-ce qu'un algorithme ?
+
+Algorithme : suite finie et ordonnée d'instructions qui, exécutées dans l'ordre, permettent de résoudre un problème donné.
+ Tu utilises des algorithmes tous les jours sans le savoir : une recette de cuisine, l'itinéraire pour aller au lycée ou la notice de montage d'un meuble. Chacun décrit des étapes précises , dans un ordre précis , qui mènent à un résultat .
+ Un bon algorithme a trois qualités :
+ il est fini : il s'arrête toujours après un nombre limité d'étapes ;
+ il est précis : chaque instruction n'a qu'une seule interprétation possible ;
+ il est général : il fonctionne pour toutes les données valides, pas seulement pour un exemple.
+
+## De l'algorithme au programme Python
+
+Résoudre un problème en informatique se fait en deux temps : on réfléchit à la solution (l'algorithme), puis on la traduit pour que l'ordinateur puisse l'exécuter (le programme).
+ Algorithme et programme : les différences Algorithme Programme 
+ Rôle Décrire la solution Faire exécuter la solution par l'ordinateur 
+ Langage Langage algorithmique (notation officielle) Langage de programmation : Python 3 
+ Exécutable ? Non, il se lit et se vérifie à la main Oui, avec un interpréteur Python 
+ Règles Notation structurée (Début, Fin, Si, Pour…) Syntaxe stricte : indentation, deux-points, parenthèses 
+
+ Pourquoi Python ? Sa syntaxe est proche du langage naturel, il est gratuit, il fonctionne sur tous les ordinateurs, et c'est le langage retenu pour l'épreuve pratique d'informatique du baccalauréat tunisien.
+
+## La structure d'un algorithme
+
+Tout algorithme suit la même structure : un nom , puis les instructions placées entre Début et Fin . Les objets utilisés (variables, constantes) sont décrits dans un tableau à part : le TDO (tableau de déclaration des objets).
+ Algorithme Algorithme Moyenne
+ Début 
+ Écrire ( "Donner la première note : " )
+ Lire (n1)
+ Écrire ( "Donner la deuxième note : " )
+ Lire (n2)
+ moy ← (n1 + n2) / 2 
+ Écrire ( "La moyenne est " , moy)
+ Fin 
+
+ Traduction en Python Copier n1 = float ( input ( "Donner la première note : " ))
+n2 = float ( input ( "Donner la deuxième note : " ))
+moy = (n1 + n2) / 2 
+ print ( "La moyenne est" , moy) 
+
+ Tableau de déclaration des objets (TDO) Objet Type / Nature 
+ n1 Réel 
+ n2 Réel 
+ moy Réel 
+
+ Remarque que Python n'a ni Début ni Fin : un programme commence à la première ligne et se termine à la dernière. La déclaration des variables n'existe pas non plus : une variable est créée au moment où on lui donne une valeur.
+
+## Installer son environnement de travail
+
+Pour suivre le programme du Bac, tu as besoin de quatre outils, tous gratuits :
+ Les outils de l'informaticien au Bac Outil À quoi il sert Comment l'obtenir 
+ Python 3 Exécuter les programmes Télécharger sur python.org (cocher « Add Python to PATH » sous Windows) 
+ Thonny Écrire et exécuter le code, avec un débogueur pas à pas Télécharger sur thonny.org 
+ numpy Créer des tableaux avec array pip install numpy ou, dans Thonny : Outils → Gérer les paquets 
+ PyQt5 + Qt Designer Créer des interfaces graphiques pip install pyqt5 pyqt5-tools 
+
+ Terminal (invite de commandes) Copier pip install numpy pyqt5 pyqt5-tools 
+
+ Astuce pour le Bac Entraîne-toi sur le même environnement que celui du lycée. Le jour de l'épreuve, tu n'auras pas le temps de découvrir un nouvel éditeur.
+
+## Les bonnes pratiques dès le départ
+
+Donne des noms clairs à tes variables : moyenne plutôt que m .
+ Respecte l' indentation (4 espaces) : en Python, elle fait partie de la syntaxe.
+ Écris un commentaire avec # pour expliquer une ligne difficile.
+ Teste ton programme avec plusieurs valeurs, y compris des cas limites (0, valeur négative, saisie vide).
+ Enregistre ton travail souvent .
+
+## À retenir
+- Algorithme = solution structurée ; programme = sa traduction en Python.
+- Un algorithme : Algorithme Nom , Début , instructions, Fin + un TDO.
+- Python ne déclare pas ses variables et n'a pas de Début/Fin : l'indentation structure le code.
+
+## Questions fréquentes
+Q : Quelle est la différence entre un algorithme et un programme ?
+R : L'algorithme décrit la solution dans un langage structuré, indépendant de tout langage informatique. Le programme est la traduction de cet algorithme dans un langage que l'ordinateur sait exécuter, comme Python.
+Q : Faut-il savoir lire un algorithme pour le Bac pratique ?
+R : Oui. Certains sujets donnent directement un algorithme (par exemple une fonction Palindrome en 2025) et demandent de l'implémenter en Python. Il faut donc savoir traduire chaque instruction algorithmique.
+Q : Quel éditeur utiliser pour programmer en Python au Bac ?
+R : Thonny est l'éditeur le plus utilisé dans les lycées tunisiens : il est simple, installe Python automatiquement et permet d'exécuter le code ligne par ligne.
+
+======================================================================
+# Les actions élémentaires : affectation, entrées et sorties
+URL : https://infopourbac.netlify.app/cours/entrees-sorties-affectation/
+
+Tout algorithme est construit avec trois actions élémentaires : l' affectation ( ← , en Python = ), la lecture d'une donnée ( Lire , en Python input() ) et l' écriture d'un résultat ( Écrire , en Python print() ).
+
+En bref :
+- x ← 5 s'écrit x = 5 en Python : on range la valeur 5 dans la variable x.
+- Lire(x) devient x = input() , mais input() renvoie toujours une chaîne .
+- Pour lire un nombre : int(input()) (entier) ou float(input()) (réel).
+- Écrire("msg", x) devient print("msg", x) .
+
+## L'affectation : ranger une valeur
+
+Affectation : action qui range une valeur dans une variable. L'ancienne valeur de la variable est remplacée.
+ Algorithme x ← 5 
+y ← x + 2 
+x ← x * 10 
+
+ Traduction en Python Copier x = 5 
+y = x + 2 # y vaut 7 
+x = x * 10 # x vaut 50 
+
+ L'affectation se lit de droite à gauche : on calcule d'abord l'expression à droite, puis on range le résultat dans la variable à gauche. C'est pour cela que x ← x * 10 a un sens : on prend l'ancienne valeur de x, on la multiplie par 10, et on range le résultat dans x.
+ Attention, piège fréquent En Python, le signe = ne veut pas dire « égal » comme en mathématiques : il veut dire « reçoit ». Pour comparer deux valeurs, on utilise == .
+
+## Permuter deux variables
+
+Échanger le contenu de deux variables est une opération classique (on la retrouve dans tous les algorithmes de tri). Il faut une variable auxiliaire , sinon une des deux valeurs est perdue.
+ Algorithme aux ← a
+a ← b
+b ← aux 
+
+ Traduction en Python Copier aux = a
+a = b
+b = aux 
+
+ À savoir Python permet aussi d'écrire a, b = b, a . Au Bac, les deux écritures sont acceptées, mais la version avec aux montre que tu as compris le mécanisme.
+
+## La sortie : Écrire / print
+
+L'instruction de sortie affiche un message ou une valeur à l'écran.
+ Algorithme Écrire ( "Bonjour" )
+ Écrire ( "La somme est " , s) 
+
+ Traduction en Python Copier print ( "Bonjour" )
+ print ( "La somme est" , s) 
+
+ print sépare automatiquement ses arguments par un espace et passe à la ligne à la fin. Deux paramètres permettent de changer ce comportement :
+ Python Copier print ( "a" , "b" , "c" , sep= "-" ) # affiche a-b-c 
+ print ( "Sans retour" , end= " " )
+ print ( "à la ligne" ) # affiche Sans retour à la ligne
+
+## L'entrée : Lire / input
+
+L'instruction d'entrée demande une valeur à l'utilisateur. En algorithmique on écrit souvent un message avec Écrire , puis Lire . En Python, input fait les deux à la fois.
+ Algorithme Écrire ( "Donner votre âge : " )
+ Lire (age) 
+
+ Traduction en Python Copier age = int ( input ( "Donner votre âge : " )) 
+
+ Attention, piège fréquent input() renvoie toujours du texte (type str ). Si l'utilisateur tape 17, la variable contient la chaîne "17" , et "17" + 1 provoque une erreur. Il faut convertir : int(input()) pour un entier, float(input()) pour un réel.
+
+## Exemple complet : périmètre et surface d'un cercle
+
+Algorithme Algorithme Cercle
+ Début 
+ Écrire ( "Donner le rayon : " )
+ Lire (r)
+ p ← 2 * PI * r
+ s ← PI * r * r
+ Écrire ( "Périmètre = " , p)
+ Écrire ( "Surface = " , s)
+ Fin 
+
+ Traduction en Python Copier from math import pi
+
+r = float ( input ( "Donner le rayon : " ))
+p = 2 * pi * r
+s = pi * r * r
+ print ( "Périmètre =" , p)
+ print ( "Surface =" , s) 
+
+ Tableau de déclaration des objets (TDO) Objet Type / Nature 
+ PI Constante = 3.14 
+ r Réel 
+ p Réel 
+ s Réel
+
+## Tableau des correspondances
+
+Actions élémentaires : algorithme ↔ Python Action Algorithme Python 
+ Affectation x ← 5 x = 5 
+ Lire une chaîne Lire(ch) ch = input() 
+ Lire un entier Lire(n) n = int(input()) 
+ Lire un réel Lire(x) x = float(input()) 
+ Afficher Écrire("x = ", x) print("x =", x)
+
+## À retenir
+- L'affectation se lit de droite à gauche et remplace l'ancienne valeur.
+- input() renvoie toujours une chaîne : convertir avec int() ou float() .
+- Pour permuter deux variables, passer par une variable auxiliaire.
+
+## Questions fréquentes
+Q : Comment lire un nombre entier en Python ?
+R : On convertit la saisie avec int : n = int(input("n = ")) . Sans int, la variable contient du texte.
+Q : Que signifie la flèche ← en algorithmique ?
+R : C'est l'affectation : la valeur à droite est rangée dans la variable à gauche. En Python, elle s'écrit avec un seul signe égal.
+Q : Pourquoi "5" + "3" donne "53" en Python ?
+R : Parce que ce sont deux chaînes de caractères : l'opérateur + les met bout à bout (concaténation). Avec des nombres, 5 + 3 donne 8.
+
+======================================================================
+# Variables, types, constantes et opérateurs
+URL : https://infopourbac.netlify.app/cours/variables-types-operateurs/
+
+Une variable est un nom qui désigne une case de la mémoire contenant une valeur. Chaque valeur a un type (entier, réel, booléen, caractère, chaîne) qui détermine les opérations possibles. Au Bac, il faut connaître chaque type, chaque opérateur et leur traduction en Python.
+
+En bref :
+- 5 types simples : Entier ( int ), Réel ( float ), Booléen ( bool ), Caractère et Chaîne ( str ).
+- DIV s'écrit // (quotient entier) et MOD s'écrit % (reste).
+- ET , OU , NON s'écrivent and , or , not .
+- Conversions : int() , float() , str() .
+
+## Variable et constante
+
+Variable : objet dont la valeur peut changer pendant l'exécution. Elle est identifiée par un nom.
+ Constante : objet dont la valeur est fixée une fois pour toutes et ne change jamais.
+ Règles pour nommer une variable en Python : commencer par une lettre ou _ , ne contenir que des lettres, des chiffres et _ , pas d'espace, et éviter les mots réservés ( if , for , def …). Python distingue majuscules et minuscules : Note et note sont deux variables différentes.
+ Python n'a pas de vraies constantes. Par convention, on écrit leur nom en majuscules :
+ Algorithme Algorithme Remise
+ Début 
+ Lire (prix)
+ net ← prix * ( 1 - TAUX)
+ Écrire ( "Prix net : " , net)
+ Fin 
+
+ Traduction en Python Copier TAUX = 0.2 # constante (convention : majuscules) 
+prix = float ( input ( "Prix : " ))
+net = prix * ( 1 - TAUX)
+ print ( "Prix net :" , net) 
+
+ Tableau de déclaration des objets (TDO) Objet Type / Nature 
+ TAUX Constante = 0.2 
+ prix Réel 
+ net Réel
+
+## Les types de données
+
+Les types simples Type (algorithme) Python Exemples Remarque 
+ Entier int 17 , -4 , 0 Pas de limite de taille en Python 
+ Réel float 3.14 , -0.5 , 2.0 Le séparateur décimal est le point 
+ Booléen bool True , False Vrai / Faux en algorithmique 
+ Caractère str "a" , "7" Une chaîne de longueur 1 en Python 
+ Chaîne str "Bac 2027" Entre guillemets 
+
+ La fonction type() donne le type d'une valeur : type(3.0) renvoie <class 'float'> .
+
+## Les conversions de type
+
+Conversions : algorithme ↔ Python Conversion Algorithme Python Exemple 
+ Chaîne → entier Valeur(ch) int(ch) int("42") → 42 
+ Chaîne → réel Valeur(ch) float(ch) float("2.5") → 2.5 
+ Nombre → chaîne Convch(x) str(x) str(42) → "42" 
+ Réel → entier (partie entière) Ent(x) int(x) int(7.9) → 7 
+
+ Attention, piège fréquent int("abc") ou int("") provoque une erreur ValueError . Avant de convertir une saisie, vérifie qu'elle contient bien des chiffres (voir le chapitre sur les chaînes : isdigit() ).
+
+## Les opérateurs arithmétiques
+
+Opérateurs arithmétiques Opération Algorithme Python Exemple Résultat 
+ Addition + + 7 + 2 9 
+ Soustraction - - 7 - 2 5 
+ Multiplication * * 7 * 2 14 
+ Division réelle / / 7 / 2 3.5 
+ Quotient entier DIV // 7 // 2 3 
+ Reste de la division MOD % 7 % 2 1 
+ Puissance — ** 2 ** 3 8 
+
+ Astuce pour le Bac MOD est l'opérateur le plus utilisé au Bac : n % 2 == 0 teste si n est pair, n % d == 0 teste si d divise n, n % 10 donne le dernier chiffre de n et n // 10 le supprime.
+
+## Opérateurs de comparaison et opérateurs logiques
+
+Comparaisons et logique Sens Algorithme Python 
+ égal à = == 
+ différent de ≠ != 
+ inférieur / inférieur ou égal < / ≤ < / <= 
+ supérieur / supérieur ou égal > / ≥ > / >= 
+ et logique ET and 
+ ou logique OU or 
+ négation NON not 
+
+ Table de vérité a b a ET b a OU b NON a 
+ Vrai Vrai Vrai Vrai Faux 
+ Vrai Faux Faux Vrai Faux 
+ Faux Vrai Faux Vrai Vrai 
+ Faux Faux Faux Faux Vrai 
+
+ À savoir Python accepte les comparaisons enchaînées : 10 <= n <= 99 est équivalent à (n >= 10) ET (n <= 99) .
+
+## Les fonctions numériques prédéfinies
+
+Fonctions numériques Rôle Algorithme Python Exemple 
+ Valeur absolue Abs(x) abs(x) abs(-4) → 4 
+ Partie entière Ent(x) int(x) int(5.8) → 5 
+ Arrondi Arrondi(x) round(x) round(5.8) → 6 
+ Racine carrée RacineCarré(x) sqrt(x) ( from math import sqrt ) sqrt(16) → 4.0 
+ Entier aléatoire entre a et b Aléa(a, b) randint(a, b) ( from random import randint ) randint(1, 6) → 1 à 6 
+
+ Bon à savoir round arrondit les cas « .5 » vers l'entier pair le plus proche : round(2.5) donne 2 et round(3.5) donne 4.
+
+## La priorité des opérateurs
+
+les parenthèses ( ) ;
+ la puissance ** ;
+ * , / , // , % ;
+ + , - ;
+ les comparaisons == , != , < … ;
+ not , puis and , puis or .
+ En cas de doute, ajoute des parenthèses : (a + b) / 2 n'est pas a + b / 2 .
+
+## À retenir
+- Entier → int , Réel → float , Booléen → bool , Caractère et Chaîne → str .
+- DIV → // , MOD → % , ≠ → != , ET/OU/NON → and/or/not .
+- = affecte, == compare.
+
+## Questions fréquentes
+Q : Comment écrire DIV et MOD en Python ?
+R : DIV (quotient de la division entière) s'écrit // et MOD (reste) s'écrit % . Par exemple 17 // 5 vaut 3 et 17 % 5 vaut 2.
+Q : Comment savoir si un nombre est pair en Python ?
+R : Un nombre n est pair si le reste de sa division par 2 est nul : n % 2 == 0 .
+Q : Quelle est la différence entre / et // en Python ?
+R : / fait une division réelle (7 / 2 = 3.5) ; // donne le quotient entier (7 // 2 = 3).
+
+======================================================================
+# Les chaînes de caractères en algorithme et en Python
+URL : https://infopourbac.netlify.app/cours/chaines-de-caracteres/
+
+Une chaîne de caractères est une suite de caractères entre guillemets. Chaque caractère a une position, son indice , qui commence à 0 . Les chaînes sont partout dans les sujets du Bac : on parcourt les chiffres d'un nombre, on teste un palindrome, on construit un message.
+
+En bref :
+- ch[i] est le caractère d'indice i ; les indices vont de 0 à Long(ch) - 1 .
+- Long(ch) → len(ch) ; Sous_chaine(ch, d, f) → ch[d:f] .
+- + met deux chaînes bout à bout (concaténation).
+- Une chaîne Python ne se modifie pas : on en construit une nouvelle.
+
+## Indices et accès aux caractères
+
+Dans ch = "PYTHON" , le caractère P a l'indice 0 et N a l'indice 5. Python accepte aussi les indices négatifs, qui partent de la fin.
+ Indices de la chaîne "PYTHON" Caractère P Y T H O N 
+ Indice 0 1 2 3 4 5 
+ Indice négatif -6 -5 -4 -3 -2 -1 
+
+ Algorithme ch ← "PYTHON" 
+ Écrire (ch[ 0 ])
+ Écrire (ch[Long(ch) - 1 ]) 
+
+ Traduction en Python Copier ch = "PYTHON" 
+ print (ch[ 0 ]) # P 
+ print (ch[ len (ch) - 1 ]) # N (ou ch[-1]) 
+
+ Attention, piège fréquent Le dernier caractère est ch[len(ch) - 1] . Écrire ch[len(ch)] provoque une erreur IndexError .
+
+## Les fonctions prédéfinies sur les chaînes
+
+Fonctions sur les chaînes : algorithme ↔ Python Rôle Algorithme Python Exemple (ch = "bonjour") 
+ Longueur Long(ch) len(ch) len(ch) → 7 
+ Position de ch1 dans ch2 (-1 si absente) Pos(ch1, ch2) ch2.find(ch1) ch.find("jour") → 3 
+ Nombre → chaîne Convch(x) str(x) str(25) → "25" 
+ Chaîne → nombre Valeur(ch) int(ch) / float(ch) int("25") → 25 
+ La chaîne est-elle numérique ? Estnum(ch) ch.isdigit() "2025".isdigit() → True 
+ Sous-chaîne de d à f (f exclu) Sous_chaine(ch, d, f) ch[d:f] ch[0:3] → "bon" 
+ Effacer de d à f (f exclu) Effacer(ch, d, f) ch[:d] + ch[f:] ch[:3] + ch[6:] → "bonr" 
+ Majuscules Majus(ch) ch.upper() ch.upper() → "BONJOUR" 
+ Code d'un caractère Ord(c) ord(c) ord("A") → 65 
+ Caractère d'un code Chr(n) chr(n) chr(66) → "B" 
+
+ À savoir isdigit() renvoie True seulement si la chaîne n'est pas vide et ne contient que des chiffres. "-5".isdigit() et "2.5".isdigit() renvoient False .
+
+## Concaténation et construction d'une chaîne
+
+L'opérateur + colle deux chaînes. On l'utilise souvent pour construire un résultat caractère par caractère, en partant d'une chaîne vide "" .
+ Algorithme inv ← "" 
+ Pour i de 0 à Long(ch) - 1 Faire 
+ inv ← ch[i] + inv
+ Fin Pour 
+
+ Inverser une chaîne en Python Copier inv = "" 
+ for i in range ( len (ch)):
+ inv = ch[i] + inv # ajoute ch[i] devant 
+ # "bac" donne "cab" 
+
+ Attention, piège fréquent Une chaîne Python est non modifiable : ch[0] = "B" provoque une erreur. Il faut construire une nouvelle chaîne : ch = "B" + ch[1:] .
+
+## Parcourir une chaîne
+
+Le parcours caractère par caractère sert à compter, chercher ou vérifier. Voici le comptage des voyelles :
+ Algorithme Fonction NbVoyelles(ch : Chaîne ) : Entier 
+ Début 
+ nb ← 0 
+ Pour i de 0 à Long(ch) - 1 Faire 
+ Si Pos(ch[i], "aeiouy" ) ≠ - 1 Alors 
+ nb ← nb + 1 
+ Fin Si 
+ Fin Pour 
+ Retourner nb
+ Fin 
+
+ Traduction en Python Copier def nb_voyelles(ch):
+ nb = 0 
+ for i in range ( len (ch)):
+ if "aeiouy" .find(ch[i]) != - 1 :
+ nb = nb + 1 
+ return nb
+
+## Passer d'un nombre à une chaîne (et inversement)
+
+Beaucoup de sujets du Bac portent sur les chiffres d'un nombre (palindrome, nombre ondulant, somme des chiffres…). Deux méthodes existent :
+ convertir en chaîne avec str(n) , puis parcourir les caractères ; chaque chiffre se reconvertit avec int(ch[i]) ;
+ rester en nombres avec n % 10 (dernier chiffre) et n // 10 (on le retire).
+ Somme des chiffres par conversion en chaîne Copier n = 2025 
+ch = str (n)
+s = 0 
+ for i in range ( len (ch)):
+ s = s + int (ch[i])
+ print (s) # 2 + 0 + 2 + 5 = 9
+
+## À retenir
+- Les indices vont de 0 à len(ch) - 1 .
+- Long → len , Pos → find , Sous_chaine → ch[d:f] , Estnum → isdigit() .
+- On ne modifie pas une chaîne : on en construit une nouvelle avec + .
+
+## Questions fréquentes
+Q : Comment obtenir la longueur d'une chaîne en Python ?
+R : Avec la fonction len : len("Tunis") renvoie 5. Elle correspond à Long(ch) en algorithmique.
+Q : Comment traduire Sous_chaine(ch, d, f) en Python ?
+R : Par une tranche : ch[d:f] . Le caractère d'indice f n'est pas inclus.
+Q : Comment vérifier qu'une saisie contient seulement des chiffres ?
+R : Avec ch.isdigit() , l'équivalent de Estnum(ch) . C'est la vérification la plus courante dans le module Play du Bac pratique.
+
+======================================================================
+# Les structures conditionnelles : Si, Sinon, Selon
+URL : https://infopourbac.netlify.app/cours/structures-conditionnelles/
+
+Une structure conditionnelle permet d'exécuter des instructions seulement si une condition est vraie. Le programme officiel distingue quatre formes : Si simple , Si complète (Si…Sinon), Si généralisée (Sinon Si) et Selon . En Python, elles s'écrivent avec if , else , elif et match .
+
+En bref :
+- Si … Alors … Fin Si → if condition:
+- Sinon → else: ; Sinon Si → elif condition:
+- Python termine chaque condition par deux-points et indente le bloc de 4 espaces.
+- Une seule branche est exécutée : la première dont la condition est vraie.
+
+## La forme simple
+
+Les instructions ne sont exécutées que si la condition est vraie. Sinon, on passe directement à la suite.
+ Algorithme Si n < 0 Alors 
+ n ← -n
+ Fin Si 
+
+ Traduction en Python Copier if n < 0 :
+ n = -n
+
+## La forme complète : Si … Sinon
+
+Algorithme Si n MOD 2 = 0 Alors 
+ Écrire (n, " est pair" )
+ Sinon 
+ Écrire (n, " est impair" )
+ Fin Si 
+
+ Traduction en Python Copier if n % 2 == 0 :
+ print (n, "est pair" )
+ else :
+ print (n, "est impair" ) 
+
+ À savoir Le else n'a jamais de condition : il traite tous les autres cas .
+
+## La forme généralisée : Sinon Si
+
+Quand il y a plus de deux cas, on enchaîne les conditions. Python les teste de haut en bas et s'arrête à la première qui est vraie.
+ Algorithme Si moy ≥ 16 Alors 
+ mention ← "Très bien" 
+ Sinon Si moy ≥ 14 Alors 
+ mention ← "Bien" 
+ Sinon Si moy ≥ 12 Alors 
+ mention ← "Assez bien" 
+ Sinon Si moy ≥ 10 Alors 
+ mention ← "Passable" 
+ Sinon 
+ mention ← "Sans mention" 
+ Fin Si 
+
+ Traduction en Python Copier if moy >= 16 :
+ mention = "Très bien" 
+ elif moy >= 14 :
+ mention = "Bien" 
+ elif moy >= 12 :
+ mention = "Assez bien" 
+ elif moy >= 10 :
+ mention = "Passable" 
+ else :
+ mention = "Sans mention" 
+
+ Attention, piège fréquent L'ordre compte. Si on teste moy >= 10 en premier, une moyenne de 17 recevrait « Passable », car Python s'arrête à la première condition vraie.
+
+## La structure Selon
+
+Selon choisit un traitement d'après la valeur d'une variable. Depuis Python 3.10, on peut la traduire avec match ; avec une version plus ancienne, on utilise if … elif .
+ Algorithme Selon j Faire 
+ 1 : nom ← "Lundi" 
+ 2 : nom ← "Mardi" 
+ 6 , 7 : nom ← "Week-end" 
+ Sinon 
+ nom ← "Autre jour" 
+ Fin Selon 
+
+ Python 3.10 et plus Copier match j:
+ case 1 :
+ nom = "Lundi" 
+ case 2 :
+ nom = "Mardi" 
+ case 6 | 7 :
+ nom = "Week-end" 
+ case _:
+ nom = "Autre jour" 
+
+ Équivalent avec if / elif (toutes versions) Copier if j == 1 :
+ nom = "Lundi" 
+ elif j == 2 :
+ nom = "Mardi" 
+ elif j == 6 or j == 7 :
+ nom = "Week-end" 
+ else :
+ nom = "Autre jour"
+
+## Les conditions composées
+
+On combine plusieurs conditions avec and , or et not .
+ Exemples de conditions composées Condition Algorithme Python 
+ n est un nombre de 3 chiffres (n ≥ 100) ET (n ≤ 999) 100 <= n <= 999 
+ n est hors de [1, 20] (n < 1) OU (n > 20) n < 1 or n > 20 
+ c est une voyelle Pos(c, "aeiouy") ≠ -1 c in "aeiouy" 
+ ch n'est pas numérique NON Estnum(ch) not ch.isdigit() 
+
+ Attention, piège fréquent n > 5 or n < 10 est toujours vrai : tout nombre est soit plus grand que 5, soit plus petit que 10. Pour un intervalle, on utilise and .
+
+## Les règles de syntaxe en Python
+
+chaque ligne if , elif , else se termine par deux-points : ;
+ le bloc à exécuter est indenté (décalé de 4 espaces) ;
+ on compare avec == , jamais avec = ;
+ il n'y a pas de Fin Si : le bloc se termine quand l'indentation revient à gauche.
+
+## À retenir
+- Si → if , Sinon Si → elif , Sinon → else , Selon → match ou if/elif .
+- Deux-points et indentation obligatoires.
+- Une seule branche est exécutée : la première condition vraie, de haut en bas.
+
+## Questions fréquentes
+Q : Comment traduire Sinon Si en Python ?
+R : Avec le mot-clé elif , contraction de « else if ».
+Q : Comment traduire la structure Selon en Python ?
+R : Avec match … case à partir de Python 3.10, ou avec une suite de if … elif … else qui fonctionne dans toutes les versions.
+Q : Pourquoi Python affiche-t-il IndentationError ?
+R : Parce que le bloc qui suit un if , elif ou else n'est pas correctement décalé. Toutes les lignes d'un même bloc doivent avoir exactement la même indentation.
+
+======================================================================
+# Les structures itératives : Pour, Tant que, Répéter
+URL : https://infopourbac.netlify.app/cours/structures-iteratives/
+
+Une structure itérative (ou boucle) répète un bloc d'instructions. On utilise la boucle Pour quand le nombre de répétitions est connu, et les boucles Tant que ou Répéter … Jusqu'à quand il dépend d'une condition.
+
+En bref :
+- Pour i de d à f Faire → for i in range(d, f + 1): (la borne f est incluse en algorithme, exclue dans range).
+- Tant que cond Faire → while cond:
+- Répéter … Jusqu'à cond n'existe pas en Python : on écrit while True: … if cond: break .
+- Somme et compteur commencent à 0, produit à 1.
+
+## La boucle Pour (nombre de tours connu)
+
+Algorithme Pour i de 1 à 5 Faire 
+ Écrire (i)
+ Fin Pour 
+
+ Traduction en Python Copier for i in range ( 1 , 6 ):
+ print (i) # 1 2 3 4 5 
+
+ Attention, piège fréquent En algorithmique, Pour i de 1 à 5 inclut 5. Dans range(1, 6) , la borne 6 est exclue . Règle de traduction : Pour i de d à f → range(d, f + 1) .
+ Traduire la boucle Pour avec range Algorithme Python Valeurs de i 
+ Pour i de 0 à n - 1 Faire for i in range(n): 0, 1, …, n − 1 
+ Pour i de 1 à n Faire for i in range(1, n + 1): 1, 2, …, n 
+ Pour i de 0 à 10 (pas = 2) Faire for i in range(0, 11, 2): 0, 2, 4, 6, 8, 10 
+ Pour i de n à 1 (pas = -1) Faire for i in range(n, 0, -1): n, n − 1, …, 1
+
+## La boucle Tant que (condition testée avant)
+
+La condition est testée avant chaque tour. Si elle est fausse dès le départ, la boucle ne s'exécute jamais.
+ Algorithme n ← 1 
+ Tant que n < 1000 Faire 
+ n ← n * 2 
+ Fin Tant que 
+ Écrire (n) 
+
+ Traduction en Python Copier n = 1 
+ while n < 1000 :
+ n = n * 2 
+ print (n) # 1024 
+
+ Attention, piège fréquent Il faut que la condition finisse par devenir fausse. Si rien ne change dans la boucle, le programme ne s'arrête jamais : c'est une boucle infinie .
+
+## La boucle Répéter … Jusqu'à (condition testée après)
+
+Le bloc est exécuté au moins une fois , puis répété jusqu'à ce que la condition devienne vraie. Python n'a pas d'équivalent direct ; deux traductions sont possibles.
+ Algorithme Répéter 
+ Écrire ( "Donner une note entre 0 et 20 : " )
+ Lire (note)
+ Jusqu'à (note ≥ 0 ) ET (note ≤ 20 ) 
+
+ Traduction 1 : while True et break Copier while True :
+ note = float ( input ( "Donner une note entre 0 et 20 : " ))
+ if 0 <= note <= 20 :
+ break 
+
+ Traduction 2 : lecture, puis while not Copier note = float ( input ( "Donner une note entre 0 et 20 : " ))
+ while not ( 0 <= note <= 20 ):
+ note = float ( input ( "Donner une note entre 0 et 20 : " )) 
+
+ À savoir Attention au sens : Répéter … Jusqu'à cond s'arrête quand cond est vraie , alors que while cond continue tant que cond est vraie. D'où le not dans la deuxième traduction.
+
+## Quelle boucle choisir ?
+
+Choisir la bonne structure itérative Situation Boucle Exemple 
+ Nombre de tours connu à l'avance Pour Parcourir un tableau, calculer une somme de 1 à n 
+ Condition à vérifier avant de commencer Tant que Diviser un nombre par 10 tant qu'il est non nul 
+ Action à faire au moins une fois Répéter … Jusqu'à Saisie contrôlée
+
+## Compteurs et accumulateurs
+
+Un compteur compte des événements ( nb ← nb + 1 ). Un accumulateur cumule des valeurs ( s ← s + x ). Leur valeur de départ est essentielle.
+ Algorithme s ← 0 
+p ← 1 
+ Pour i de 1 à n Faire 
+ s ← s + i
+ p ← p * i
+ Fin Pour 
+
+ Traduction en Python Copier s = 0 # somme : départ à 0 
+p = 1 # produit : départ à 1 
+ for i in range ( 1 , n + 1 ):
+ s = s + i
+ p = p * i 
+
+ Avec n = 5, on obtient s = 15 (1 + 2 + 3 + 4 + 5) et p = 120 (5!). Un produit initialisé à 0 resterait toujours égal à 0.
+
+## Parcourir les chiffres d'un nombre
+
+Le schéma « n % 10 puis n // 10 » revient dans presque tous les sujets sur les nombres.
+ Algorithme nb ← 0 
+ Tant que n ≠ 0 Faire 
+ chiffre ← n MOD 10 
+ nb ← nb + 1 
+ n ← n DIV 10 
+ Fin Tant que 
+
+ Compter les chiffres de n (n > 0) Copier nb = 0 
+ while n != 0 :
+ chiffre = n % 10 # dernier chiffre 
+ nb = nb + 1 
+ n = n // 10 # on retire ce chiffre
+
+## À retenir
+- Pour i de d à f → range(d, f + 1) .
+- Tant que teste avant, Répéter teste après (au moins un passage).
+- Répéter … Jusqu'à cond → while True: … if cond: break .
+
+## Questions fréquentes
+Q : Comment traduire Pour i de 1 à n en Python ?
+R : for i in range(1, n + 1): . La fonction range exclut sa borne de fin, d'où le + 1.
+Q : Comment écrire la boucle Répéter Jusqu'à en Python ?
+R : Python n'a pas de boucle Répéter. On utilise while True: avec un break quand la condition d'arrêt est vraie, ou une première lecture suivie de while not condition: .
+Q : Quelle est la différence entre for et while ?
+R : for s'utilise quand on connaît le nombre de tours ; while quand on répète tant qu'une condition reste vraie, sans savoir à l'avance combien de fois.
+
+======================================================================
+# Les sous-programmes : fonctions et procédures
+URL : https://infopourbac.netlify.app/cours/sous-programmes-fonctions-procedures/
+
+Un sous-programme est un bloc d'instructions nommé, que l'on écrit une fois et que l'on appelle autant de fois que nécessaire. Une fonction renvoie un résultat ; une procédure réalise une action sans rien renvoyer. Au Bac pratique, une solution modulaire (découpée en sous-programmes) est exigée.
+
+En bref :
+- Fonction : Fonction Nom(paramètres) : Type + Retourner → def nom(paramètres): + return .
+- Procédure : Procédure Nom(paramètres) → def nom(paramètres): sans return .
+- Un paramètre précédé de @ est passé par référence : la procédure peut le modifier.
+- Les objets locaux d'un sous-programme sont déclarés dans un TDOL .
+
+## Pourquoi découper en sous-programmes ?
+
+Lisibilité : chaque sous-programme a un nom qui dit ce qu'il fait ;
+ Réutilisation : on écrit le code une fois, on l'appelle partout ;
+ Tests : on vérifie chaque partie séparément ;
+ Exigence du Bac : les sujets précisent qu'une solution modulaire est exigée et demandent des fonctions précises (par exemple Premier(A) , Palindrome(CH) , Verif(N) ).
+
+## La fonction : calculer et renvoyer un résultat
+
+Fonction : sous-programme qui reçoit des paramètres, effectue un traitement et renvoie un seul résultat avec Retourner .
+ Algorithme Fonction Moyenne(a, b : Réel ) : Réel 
+ Début 
+ m ← (a + b) / 2 
+ Retourner m
+ Fin 
+
+ Traduction en Python Copier def moyenne(a, b):
+ m = (a + b) / 2 
+ return m 
+
+ Tableau de déclaration des objets locaux (TDOL) Objet Type / Nature 
+ m Réel 
+
+ On appelle la fonction dans une expression, et on récupère son résultat :
+ Algorithme moy ← Moyenne( 12 , 15 )
+ Écrire (Moyenne(n1, n2)) 
+
+ Traduction en Python Copier moy = moyenne( 12 , 15 ) # moy vaut 13.5 
+ print (moyenne(n1, n2)) 
+
+ Attention, piège fréquent return termine la fonction immédiatement. Une fonction sans return renvoie None . Et print n'est pas return : print affiche, return renvoie une valeur utilisable.
+
+## La fonction booléenne
+
+Une fonction qui répond par vrai ou faux est très fréquente au Bac (« vérifier si N est premier », « tester si CH est palindrome »).
+ Algorithme Fonction EstPair(n : Entier ) : Booléen 
+ Début 
+ Retourner n MOD 2 = 0 
+ Fin 
+
+ Traduction en Python Copier def est_pair(n):
+ return n % 2 == 0 
+
+ On l'utilise directement dans une condition : if est_pair(x): .
+
+## La procédure : réaliser une action
+
+Procédure : sous-programme qui réalise une action (afficher, remplir, trier…) et ne renvoie pas de résultat.
+ Algorithme Procédure Afficher(T : Tab, n : Entier )
+ Début 
+ Pour i de 0 à n - 1 Faire 
+ Écrire (T[i])
+ Fin Pour 
+ Fin 
+
+ Traduction en Python Copier def afficher(T, n):
+ for i in range (n):
+ print (T[i]) 
+
+ On appelle une procédure comme une instruction, sur sa propre ligne : afficher(T, n) .
+
+## Paramètres formels, effectifs et mode de passage
+
+Paramètres formels : les noms écrits dans l'en-tête du sous-programme ( a , b ).
+ Paramètres effectifs : les valeurs ou variables données au moment de l'appel ( 12 , 15 ).
+ Passage des paramètres Mode Notation Effet En Python 
+ Par valeur n : Entier Le sous-programme travaille sur une copie : la variable de l'appelant ne change pas Cas des nombres, chaînes et booléens 
+ Par référence @T : Tab Le sous-programme peut modifier la variable de l'appelant Cas des tableaux numpy : une modification de T[i] est visible après l'appel 
+
+ Algorithme Procédure Remplir(@T : Tab, n : Entier )
+ Début 
+ Pour i de 0 à n - 1 Faire 
+ Lire (T[i])
+ Fin Pour 
+ Fin 
+
+ Traduction en Python Copier def remplir(T, n):
+ for i in range (n):
+ T[i] = int ( input ( "T[" + str (i) + "] = " ))
+ # après remplir(T, n), T est rempli 
+
+ À savoir Une procédure Python ne peut pas modifier un entier reçu en paramètre. Pour « lire n » dans un sous-programme, on écrit une fonction qui renvoie la valeur : n = saisir() .
+
+## La fonction de saisie contrôlée
+
+Presque tous les sujets demandent de s'assurer de la validité d'une donnée. On l'isole dans une fonction :
+ Algorithme Fonction Saisir() : Entier 
+ Début 
+ Répéter 
+ Écrire ( "n = " )
+ Lire (n)
+ Jusqu'à (n ≥ 2 ) ET (n ≤ 20 )
+ Retourner n
+ Fin 
+
+ Traduction en Python Copier def saisir():
+ n = int ( input ( "n = " ))
+ while not ( 2 <= n <= 20 ):
+ n = int ( input ( "n = " ))
+ return n
+
+## Objets locaux et globaux
+
+Un objet local est créé dans un sous-programme et n'existe que pendant son exécution. Un objet global est déclaré dans le programme principal. Pour éviter les erreurs, un sous-programme doit recevoir ce dont il a besoin par ses paramètres et renvoyer son résultat avec return .
+
+## Organiser une solution modulaire
+
+Une solution modulaire se compose de sous-programmes, puis d'un programme principal qui les appelle :
+ Structure type d'une solution modulaire Copier from numpy import array 
+
+ def saisir():
+ n = int ( input ( "n = " ))
+ while not ( 2 <= n <= 20 ):
+ n = int ( input ( "n = " ))
+ return n
+
+ def remplir(T, n):
+ for i in range (n):
+ T[i] = int ( input ( "T[" + str (i) + "] = " ))
+
+ def somme(T, n):
+ s = 0 
+ for i in range (n):
+ s = s + T[i]
+ return s
+
+ # programme principal 
+n = saisir()
+T = array ([ int ()] * n)
+remplir(T, n)
+ print ( "Somme =" , somme(T, n)) 
+
+ Astuce pour le Bac Au Bac pratique, le programme principal est le module Play déclenché par le bouton de l'interface (voir le chapitre sur PyQt5).
+
+## À retenir
+- Fonction = renvoie une valeur ( return ) ; procédure = réalise une action.
+- Les deux s'écrivent avec def en Python ; on les définit avant de les appeler.
+- @ = passage par référence ; en Python, un tableau modifié dans une procédure reste modifié.
+
+## Questions fréquentes
+Q : Quelle est la différence entre une fonction et une procédure ?
+R : Une fonction renvoie un résultat avec return et s'utilise dans une expression. Une procédure réalise une action (afficher, remplir, trier) sans renvoyer de résultat et s'appelle comme une instruction.
+Q : Que signifie le symbole @ devant un paramètre ?
+R : Il indique un passage par référence : le sous-programme peut modifier la variable de l'appelant. C'est le cas d'un tableau à remplir ou à trier.
+Q : Que veut dire « solution modulaire » au Bac ?
+R : Que le programme doit être découpé en sous-programmes (fonctions et procédures), chacun responsable d'une tâche, au lieu d'un seul bloc de code.
+
+======================================================================
+# Les tableaux à une dimension (vecteurs) avec numpy
+URL : https://infopourbac.netlify.app/cours/tableaux/
+
+Un tableau (ou vecteur) est une structure qui regroupe, sous un seul nom, un nombre fixe d'éléments de même type . Chaque élément est repéré par son indice , de 0 à n − 1. Au Bac, on crée les tableaux avec la fonction array de la bibliothèque numpy .
+
+En bref :
+- Déclaration : un nouveau type dans le TDNT , puis la variable dans le TDO.
+- Python : from numpy import array puis T = array([int()] * n) .
+- T[i] est l'élément d'indice i ; les indices vont de 0 à n − 1.
+- Tous les éléments ont le même type.
+
+## Déclarer un tableau
+
+En algorithmique, on définit d'abord un nouveau type dans le tableau de déclaration des nouveaux types (TDNT), puis on déclare la variable dans le TDO.
+ Tableau de déclaration des nouveaux types (TDNT) Type 
+ Tab = Tableau de 20 Entiers 
+
+ Tableau de déclaration des objets (TDO) Objet Type / Nature 
+ T Tab 
+ n Entier 
+
+ En Python, on crée le tableau avec array . L'expression [int()] * n fabrique une liste de n zéros, que array transforme en tableau :
+ Créer un tableau avec numpy Tableau de… Création en Python Contenu initial 
+ n entiers T = array([int()] * n) n fois 0 
+ n réels T = array([float()] * n) n fois 0.0 
+ n chaînes T = array([str()] * n, dtype="U20") n chaînes vides (20 caractères max) 
+ n booléens T = array([bool()] * n) n fois False 
+
+ Attention, piège fréquent Sans dtype , array([str()] * n) crée des cases qui ne gardent qu' un seul caractère : la chaîne "Tunis" deviendrait "T". Précise toujours une taille, par exemple dtype="U20" .
+
+## Accéder aux éléments
+
+Un tableau T de 5 entiers Indice 0 1 2 3 4 
+ T[i] 12 7 15 9 20 
+
+ Algorithme T[ 0 ] ← 12 
+x ← T[ 2 ] + T[ 4 ]
+ Écrire (T[n - 1 ]) 
+
+ Traduction en Python Copier T[ 0 ] = 12 
+x = T[ 2 ] + T[ 4 ] # 15 + 20 = 35 
+ print (T[n - 1 ]) # dernier élément 
+
+ Attention, piège fréquent Le dernier élément est T[n - 1] . Accéder à T[n] provoque une erreur IndexError .
+
+## Remplir un tableau
+
+Algorithme Procédure Remplir(@T : Tab, n : Entier )
+ Début 
+ Pour i de 0 à n - 1 Faire 
+ Répéter 
+ Écrire ( "T[" , i, "] = " )
+ Lire (T[i])
+ Jusqu'à T[i] > 0 
+ Fin Pour 
+ Fin 
+
+ Remplissage avec des entiers strictement positifs Copier def remplir(T, n):
+ for i in range (n):
+ T[i] = int ( input ( "T[" + str (i) + "] = " ))
+ while not (T[i] > 0 ):
+ T[i] = int ( input ( "T[" + str (i) + "] = " ))
+
+## Afficher un tableau
+
+Algorithme Procédure Afficher(T : Tab, n : Entier )
+ Début 
+ Pour i de 0 à n - 1 Faire 
+ Écrire (T[i], " " )
+ Fin Pour 
+ Fin 
+
+ Traduction en Python Copier def afficher(T, n):
+ for i in range (n):
+ print (T[i], end= " " )
+ print () 
+
+ À savoir print(T) affiche tout le tableau numpy d'un coup, au format [12 7 15 9 20] .
+
+## Les traitements classiques
+
+Ces fonctions reposent toutes sur un parcours du tableau avec une boucle Pour.
+ Algorithme Fonction Maximum(T : Tab, n : Entier ) : Entier 
+ Début 
+ max ← T[ 0 ]
+ Pour i de 1 à n - 1 Faire 
+ Si T[i] > max Alors 
+ max ← T[i]
+ Fin Si 
+ Fin Pour 
+ Retourner max
+ Fin 
+
+ Traduction en Python Copier def maximum(T, n):
+ mx = T[ 0 ]
+ for i in range ( 1 , n):
+ if T[i] > mx:
+ mx = T[i]
+ return mx 
+
+ Attention, piège fréquent Initialise le maximum avec T[0] , jamais avec 0 : si toutes les valeurs sont négatives, le résultat serait faux. En Python, évite aussi de nommer une variable max , qui est le nom d'une fonction prédéfinie.
+ Algorithme Fonction Moyenne(T : Tab, n : Entier ) : Réel 
+ Début 
+ s ← 0 
+ Pour i de 0 à n - 1 Faire 
+ s ← s + T[i]
+ Fin Pour 
+ Retourner s / n
+ Fin 
+
+ Traduction en Python Copier def moyenne(T, n):
+ s = 0 
+ for i in range (n):
+ s = s + T[i]
+ return s / n 
+
+ Algorithme Fonction Occurrences(T : Tab, n, x : Entier ) : Entier 
+ Début 
+ nb ← 0 
+ Pour i de 0 à n - 1 Faire 
+ Si T[i] = x Alors 
+ nb ← nb + 1 
+ Fin Si 
+ Fin Pour 
+ Retourner nb
+ Fin 
+
+ Traduction en Python Copier def occurrences(T, n, x):
+ nb = 0 
+ for i in range (n):
+ if T[i] == x:
+ nb = nb + 1 
+ return nb
+
+## À retenir
+- Un tableau regroupe n éléments de même type, d'indices 0 à n − 1.
+- Création : from numpy import array et T = array([int()] * n) .
+- Maximum et minimum : initialiser avec T[0] .
+
+## Questions fréquentes
+Q : Comment créer un tableau de n entiers en Python pour le Bac ?
+R : Avec numpy : from numpy import array , puis T = array([int()] * n) . Le tableau contient n zéros.
+Q : Pourquoi utiliser numpy et non une liste Python ?
+R : Le programme tunisien utilise des tableaux de taille fixe et d'un seul type, ce qui correspond aux tableaux numpy créés avec array. Les listes Python peuvent changer de taille et mélanger les types.
+Q : Quel est l'indice du dernier élément d'un tableau de n éléments ?
+R : n − 1, car les indices commencent à 0.
+
+======================================================================
+# Les algorithmes de tri : sélection, bulles, insertion
+URL : https://infopourbac.netlify.app/cours/algorithmes-de-tri/
+
+Trier un tableau, c'est ranger ses éléments dans un ordre (croissant ou décroissant). Le programme étudie trois méthodes : le tri par sélection (on place le minimum au début), le tri à bulles (on échange les voisins mal rangés) et le tri par insertion (on insère chaque élément à sa place).
+
+En bref :
+- Sélection : chercher la position du minimum, puis le permuter avec le premier élément non trié.
+- Bulles : parcourir et échanger deux voisins mal rangés, recommencer tant qu'il y a eu un échange.
+- Insertion : prendre chaque élément et décaler les plus grands vers la droite pour l'insérer.
+- Ordre décroissant : il suffit d'inverser la comparaison.
+
+## L'outil commun : permuter deux éléments
+
+Algorithme Procédure Permuter(@T : Tab, i, j : Entier )
+ Début 
+ aux ← T[i]
+ T[i] ← T[j]
+ T[j] ← aux
+ Fin 
+
+ Traduction en Python Copier def permuter(T, i, j):
+ aux = T[i]
+ T[i] = T[j]
+ T[j] = aux
+
+## Le tri par sélection
+
+Principe : pour chaque position i, on cherche la position du plus petit élément de la partie non triée (de i à n − 1), puis on le permute avec T[i] .
+ Algorithme Fonction PosMin(T : Tab, d, n : Entier ) : Entier 
+ Début 
+ pmin ← d
+ Pour j de d + 1 à n - 1 Faire 
+ Si T[j] < T[pmin] Alors 
+ pmin ← j
+ Fin Si 
+ Fin Pour 
+ Retourner pmin
+ Fin 
+
+ Procédure Tri_Selection(@T : Tab, n : Entier )
+ Début 
+ Pour i de 0 à n - 2 Faire 
+ p ← PosMin(T, i, n)
+ Si p ≠ i Alors 
+ Permuter(T, i, p)
+ Fin Si 
+ Fin Pour 
+ Fin 
+
+ Traduction en Python Copier def pos_min(T, d, n):
+ pmin = d
+ for j in range (d + 1 , n):
+ if T[j] < T[pmin]:
+ pmin = j
+ return pmin
+
+ def tri_selection(T, n):
+ for i in range (n - 1 ):
+ p = pos_min(T, i, n)
+ if p != i:
+ permuter(T, i, p) 
+
+ Déroulement du tri par sélection sur [5, 2, 8, 1, 4] Étape Minimum trouvé Tableau après l'étape 
+ Départ — [5, 2, 8, 1, 4] 
+ i = 0 1 (indice 3) [ 1 , 2, 8, 5, 4] 
+ i = 1 2 (déjà en place) [ 1, 2 , 8, 5, 4] 
+ i = 2 4 (indice 4) [ 1, 2, 4 , 5, 8] 
+ i = 3 5 (déjà en place) [ 1, 2, 4, 5, 8 ]
+
+## Le tri à bulles
+
+Principe : on parcourt le tableau en comparant chaque élément avec son voisin de droite ; s'ils sont mal rangés, on les échange. On recommence tant qu'au moins un échange a eu lieu. À chaque passage, le plus grand élément restant « remonte » à sa place, comme une bulle.
+ Algorithme Procédure Tri_Bulles(@T : Tab, n : Entier )
+ Début 
+ Répéter 
+ echange ← Faux 
+ Pour i de 0 à n - 2 Faire 
+ Si T[i] > T[i + 1 ] Alors 
+ Permuter(T, i, i + 1 )
+ echange ← Vrai 
+ Fin Si 
+ Fin Pour 
+ Jusqu'à echange = Faux 
+ Fin 
+
+ Traduction en Python Copier def tri_bulles(T, n):
+ echange = True 
+ while echange:
+ echange = False 
+ for i in range (n - 1 ):
+ if T[i] > T[i + 1 ]:
+ permuter(T, i, i + 1 )
+ echange = True 
+
+ Déroulement du tri à bulles sur [5, 2, 8, 1, 4] Passage Échanges réalisés Tableau après le passage 
+ Départ — [5, 2, 8, 1, 4] 
+ 1 5↔2, 8↔1, 8↔4 [2, 5, 1, 4, 8 ] 
+ 2 5↔1, 5↔4 [2, 1, 4, 5, 8 ] 
+ 3 2↔1 [ 1, 2, 4, 5, 8 ] 
+ 4 aucun → arrêt [1, 2, 4, 5, 8] 
+
+ À savoir Le dernier passage, sans aucun échange, sert à constater que le tableau est trié.
+
+## Le tri par insertion
+
+Principe : comme lorsqu'on range des cartes dans sa main. Pour chaque élément à partir de l'indice 1, on le met de côté, on décale vers la droite les éléments déjà triés qui sont plus grands que lui, puis on l'insère dans la place libérée.
+ Algorithme Procédure Tri_Insertion(@T : Tab, n : Entier )
+ Début 
+ Pour i de 1 à n - 1 Faire 
+ v ← T[i]
+ j ← i
+ Tant que (j > 0 ) ET (T[j - 1 ] > v) Faire 
+ T[j] ← T[j - 1 ]
+ j ← j - 1 
+ Fin Tant que 
+ T[j] ← v
+ Fin Pour 
+ Fin 
+
+ Traduction en Python Copier def tri_insertion(T, n):
+ for i in range ( 1 , n):
+ v = T[i]
+ j = i
+ while j > 0 and T[j - 1 ] > v:
+ T[j] = T[j - 1 ]
+ j = j - 1 
+ T[j] = v 
+
+ Déroulement du tri par insertion sur [5, 2, 8, 1, 4] Étape Élément inséré Tableau après l'étape 
+ Départ — [5, 2, 8, 1, 4] 
+ i = 1 2 (5 décalé) [ 2, 5 , 8, 1, 4] 
+ i = 2 8 (aucun décalage) [ 2, 5, 8 , 1, 4] 
+ i = 3 1 (8, 5, 2 décalés) [ 1, 2, 5, 8 , 4] 
+ i = 4 4 (8, 5 décalés) [ 1, 2, 4, 5, 8 ] 
+
+ Attention, piège fréquent L'ordre des conditions compte : j > 0 doit être testé avant T[j - 1] > v . Python arrête l'évaluation de and dès que la première condition est fausse, ce qui évite de lire T[-1] .
+
+## Comparer les trois méthodes
+
+Tri par sélection, à bulles et par insertion Sélection Bulles Insertion 
+ Idée Placer le minimum au début Échanger les voisins mal rangés Insérer chaque élément à sa place 
+ Outil principal Recherche du minimum + permutation Permutation + indicateur booléen Décalage vers la droite 
+ Tableau déjà trié Autant de comparaisons qu'un tableau désordonné Un seul passage suffit Très rapide : aucun décalage 
+ Nombre de comparaisons (ordre de grandeur) n² / 2 jusqu'à n² jusqu'à n² / 2 
+
+ Astuce pour le Bac Pour un tri décroissant , inverse simplement la comparaison : > au lieu de < dans la sélection (recherche du maximum), < au lieu de > dans les bulles et l'insertion.
+
+## À retenir
+- Sélection : minimum de la partie non triée → permutation avec T[i].
+- Bulles : échange des voisins, répété jusqu'à un passage sans échange.
+- Insertion : décalage des plus grands vers la droite, puis insertion.
+
+## Questions fréquentes
+Q : Quel est le principe du tri par sélection ?
+R : À chaque étape, on cherche le plus petit élément de la partie non triée du tableau et on le permute avec le premier élément de cette partie.
+Q : Pourquoi le tri à bulles s'appelle-t-il ainsi ?
+R : Parce qu'à chaque passage, le plus grand élément restant remonte jusqu'à la fin du tableau, comme une bulle qui monte à la surface.
+Q : Quel tri est le plus rapide sur un tableau presque trié ?
+R : Le tri par insertion : chaque élément n'a besoin que de très peu de décalages. Le tri à bulles avec indicateur s'arrête lui aussi rapidement.
+
+======================================================================
+# Les algorithmes de recherche : séquentielle et dichotomique
+URL : https://infopourbac.netlify.app/cours/algorithmes-de-recherche/
+
+Rechercher, c'est déterminer si une valeur x se trouve dans un tableau. La recherche séquentielle examine les éléments un par un et fonctionne sur n'importe quel tableau. La recherche dichotomique divise l'intervalle de recherche par deux à chaque étape, mais exige un tableau trié .
+
+En bref :
+- Séquentielle : on avance tant que l'élément courant est différent de x.
+- Dichotomique : on compare x à l'élément du milieu et on garde la bonne moitié.
+- Sur 1 000 éléments : jusqu'à 1 000 comparaisons en séquentielle, une dizaine en dichotomique.
+- La dichotomie ne marche que sur un tableau trié.
+
+## La recherche séquentielle
+
+Algorithme Fonction Recherche(T : Tab, n, x : Entier ) : Booléen 
+ Début 
+ i ← 0 
+ Tant que (i < n) ET (T[i] ≠ x) Faire 
+ i ← i + 1 
+ Fin Tant que 
+ Retourner i < n
+ Fin 
+
+ Traduction en Python Copier def recherche(T, n, x):
+ i = 0 
+ while i < n and T[i] != x:
+ i = i + 1 
+ return i < n 
+
+ La boucle s'arrête soit parce que x a été trouvé ( T[i] = x ), soit parce qu'on a dépassé la fin du tableau ( i = n ). Le test final i < n distingue les deux cas.
+ À savoir Pour renvoyer la position de x au lieu d'un booléen, on retourne i si i < n , et -1 sinon.
+
+## La recherche dichotomique
+
+Principe : dans un tableau trié, on compare x à l'élément du milieu. S'il est égal, c'est trouvé. Si x est plus petit, on continue dans la moitié gauche ; sinon dans la moitié droite. On s'arrête quand x est trouvé ou quand l'intervalle est vide.
+ Algorithme Fonction Dichotomie(T : Tab, n, x : Entier ) : Booléen 
+ Début 
+ deb ← 0 
+ fin ← n - 1 
+ trouve ← Faux 
+ Tant que (deb ≤ fin) ET (trouve = Faux ) Faire 
+ mil ← (deb + fin) DIV 2 
+ Si T[mil] = x Alors 
+ trouve ← Vrai 
+ Sinon Si x < T[mil] Alors 
+ fin ← mil - 1 
+ Sinon 
+ deb ← mil + 1 
+ Fin Si 
+ Fin Tant que 
+ Retourner trouve
+ Fin 
+
+ Traduction en Python Copier def dichotomie(T, n, x):
+ deb = 0 
+ fin = n - 1 
+ trouve = False 
+ while deb <= fin and not trouve:
+ mil = (deb + fin) // 2 
+ if T[mil] == x:
+ trouve = True 
+ elif x < T[mil]:
+ fin = mil - 1 
+ else :
+ deb = mil + 1 
+ return trouve 
+
+ Recherche de 23 dans [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] Étape deb fin mil T[mil] Décision 
+ 1 0 9 4 16 23 > 16 → moitié droite 
+ 2 5 9 7 56 23 
+ 3 5 6 5 23 trouvé
+
+## Comparer les deux méthodes
+
+Recherche séquentielle et dichotomique Séquentielle Dichotomique 
+ Condition Aucune Tableau trié 
+ Principe Examiner les éléments un par un Diviser l'intervalle par deux 
+ Comparaisons au pire (n = 1 000) 1 000 10 
+ Comparaisons au pire (n = 1 000 000) 1 000 000 20 
+
+ Astuce pour le Bac Si un sujet te demande de chercher plusieurs fois dans un même grand tableau, trier une fois puis utiliser la dichotomie est bien plus efficace.
+
+## Rechercher dans une chaîne
+
+Pour savoir si une chaîne en contient une autre, Python propose ch2.find(ch1) (l'équivalent de Pos(ch1, ch2) ), qui renvoie la position ou -1, et l'opérateur in qui renvoie un booléen.
+ Python Copier ch = "baccalauréat" 
+ print (ch.find( "lau" )) # 5 
+ print ( "bac" in ch) # True
+
+## À retenir
+- Séquentielle : tant que i < n et T[i] != x , avancer.
+- Dichotomique : milieu (deb + fin) // 2 , garder la bonne moitié ; tableau trié obligatoire.
+- La dichotomie divise le nombre de comparaisons de façon spectaculaire.
+
+## Questions fréquentes
+Q : Quelle est la condition pour utiliser la recherche dichotomique ?
+R : Le tableau doit être trié. Sinon, comparer x à l'élément du milieu ne permet pas de savoir dans quelle moitié il se trouve.
+Q : Comment calculer le milieu en Python ?
+R : Avec la division entière : mil = (deb + fin) // 2 , qui correspond à (deb + fin) DIV 2 .
+Q : Que renvoie la recherche séquentielle si la valeur est absente ?
+R : Dans la version booléenne, elle renvoie False (la boucle s'arrête avec i = n). Dans la version qui renvoie une position, on renvoie conventionnellement -1.
+
+======================================================================
+# Les interfaces graphiques avec Qt Designer et PyQt5
+URL : https://infopourbac.netlify.app/cours/interfaces-graphiques-pyqt5/
+
+Au Bac pratique, le programme Python est piloté par une interface graphique : une fenêtre dessinée avec Qt Designer , enregistrée dans un fichier .ui , puis chargée en Python avec PyQt5 . Un clic sur un bouton lance le module Play , qui lit les saisies, les vérifie, calcule et affiche le résultat.
+
+En bref :
+- 3 composants essentiels : QLabel (texte), QLineEdit (saisie), QPushButton (bouton).
+- Chaque composant a un objectName : c'est le nom utilisé dans le code.
+- Lire : windows.nom.text() ; écrire : windows.nom.setText(texte) .
+- Relier : windows.bouton.clicked.connect(Play) , sans parenthèses après Play.
+
+## Qu'est-ce qu'une interface graphique ?
+
+Interface graphique (IHM) : fenêtre qui permet à l'utilisateur d'interagir avec le programme à l'aide de zones de saisie, de boutons et de zones d'affichage, au lieu de la console.
+ Les composants utilisés au Bac Composant (widget) Rôle Méthodes utiles 
+ QLabel Afficher un texte fixe ou un résultat setText(ch) , text() , clear() 
+ QLineEdit Saisir une valeur sur une ligne text() , setText(ch) , clear() 
+ QPushButton Déclencher un traitement par un clic clicked.connect(module)
+
+## Créer l'interface dans Qt Designer
+
+Ouvre Qt Designer et choisis un modèle de fenêtre ( Main Window ou Widget ).
+ Glisse depuis la boîte de widgets les labels , la ou les zones de saisie et le bouton demandés.
+ Modifie le texte affiché (double-clic) : par exemple « N = » ou « Vérifier ».
+ Dans l'éditeur de propriétés, donne à chaque composant un objectName court et clair : N , Verifier , Resultat .
+ Enregistre le fichier avec le nom demandé (par exemple Interface.ui ) dans ton dossier de travail .
+ Attention, piège fréquent Le nom utilisé dans le code ( windows.Resultat ) doit être exactement l'objectName choisi dans Qt Designer, majuscules comprises. Sinon Python affiche une erreur AttributeError .
+
+## Le code de base (l'annexe du sujet)
+
+Chaque sujet de Bac pratique fournit ce squelette en annexe. Tu dois y ajouter tes sous-programmes et ton module Play, puis remplacer les noms génériques par les tiens.
+ Squelette d'une application PyQt5 Copier from PyQt5.uic import loadUi 
+ from PyQt5.QtWidgets import QApplication 
+
+ # ... tes fonctions et le module Play ... 
+
+app = QApplication ([])
+windows = loadUi ( "Interface.ui" )
+windows.show()
+windows.Verifier.clicked.connect(Play)
+app.exec_() 
+
+ Que fait chaque ligne ? Ligne Rôle 
+ from PyQt5.uic import loadUi Importer l'outil qui charge un fichier .ui 
+ from PyQt5.QtWidgets import QApplication Importer la classe de l'application 
+ app = QApplication([]) Créer l'application 
+ windows = loadUi("Interface.ui") Charger la fenêtre dessinée dans Qt Designer 
+ windows.show() Afficher la fenêtre 
+ windows.Verifier.clicked.connect(Play) Lancer Play à chaque clic sur le bouton Verifier 
+ app.exec_() Démarrer la boucle d'attente des événements 
+
+ Attention, piège fréquent On écrit connect(Play) et pas connect(Play()) . Avec les parenthèses, Play serait exécuté immédiatement au démarrage, avant tout clic.
+
+## Lire une saisie et afficher un résultat
+
+Lire et écrire dans l'interface Action Code Remarque 
+ Lire le texte saisi ch = windows.N.text() Renvoie toujours une chaîne 
+ Lire un entier n = int(windows.N.text()) Erreur si la saisie est vide ou non numérique 
+ Afficher un texte windows.Resultat.setText("Bravo") setText attend une chaîne 
+ Afficher un nombre windows.Resultat.setText(str(n)) Convertir avec str() 
+ Vider un composant windows.N.clear()
+
+## Le module Play : lire, vérifier, traiter, afficher
+
+Le module Play suit toujours le même plan en quatre temps. La vérification se fait sur la chaîne, avant toute conversion avec int() .
+ Exemple de module Play complet Copier def premier(n):
+ if n < 2 :
+ return False 
+ d = 2 
+ while d <= n // 2 and n % d != 0 :
+ d = d + 1 
+ return d > n // 2 
+
+ def Play():
+ ch = windows.N.text() # 1. lire 
+ if not ch.isdigit() or not ( 2 <= int (ch) <= 1000 ):
+ windows.Resultat.setText( "Veuillez saisir un entier entre 2 et 1000" ) # 2. vérifier 
+ else :
+ n = int (ch)
+ if premier(n): # 3. traiter 
+ windows.Resultat.setText(ch + " est premier" ) # 4. afficher 
+ else :
+ windows.Resultat.setText(ch + " n'est pas premier" ) 
+
+ Astuce pour le Bac Recopie exactement le format des messages donnés dans les exemples du sujet (espaces, majuscules, ponctuation) : c'est ce que le correcteur compare.
+
+## Afficher plusieurs résultats
+
+Quand il faut afficher une liste de valeurs dans un seul label (par exemple « Les nombres ronds sont : 35-37-38 »), on construit une chaîne au fur et à mesure :
+ Python Copier res = "" 
+ for x in range (a, b + 1 ):
+ if condition(x):
+ res = res + str (x) + "-" 
+ if res == "" :
+ windows.Resultat.setText( "Aucun nombre trouvé" )
+ else :
+ windows.Resultat.setText( "Les nombres sont : " + res[:- 1 ]) # retire le dernier tiret
+
+## Les erreurs les plus fréquentes
+
+Diagnostiquer une interface qui ne marche pas Message ou symptôme Cause Solution 
+ AttributeError: … has no attribute … objectName différent entre Qt Designer et le code Vérifier l'orthographe exacte dans l'éditeur de propriétés 
+ FileNotFoundError sur le fichier .ui Le .ui n'est pas dans le même dossier que le .py Enregistrer les deux fichiers dans le dossier de travail 
+ ValueError: invalid literal for int() Saisie vide ou non numérique convertie avec int() Vérifier avec isdigit() avant de convertir 
+ TypeError sur setText Un nombre est passé à setText Convertir avec str() 
+ Le programme réagit au démarrage, pas au clic connect(Play()) avec parenthèses Écrire connect(Play) 
+ Rien ne se passe au clic Mauvais nom de bouton dans connect Utiliser l'objectName du bouton
+
+## À retenir
+- Qt Designer → fichier .ui ; PyQt5 → loadUi le charge.
+- text() lit (une chaîne), setText() écrit (une chaîne).
+- Play : lire → vérifier → traiter → afficher ; connect(Play) sans parenthèses.
+
+## Questions fréquentes
+Q : Comment récupérer la valeur saisie dans un QLineEdit ?
+R : Avec la méthode text() : ch = windows.N.text() , où N est l'objectName de la zone de saisie. Le résultat est une chaîne.
+Q : Comment afficher un nombre dans un QLabel ?
+R : setText attend une chaîne : on convertit le nombre avec str() , par exemple windows.Resultat.setText(str(s)) .
+Q : Où enregistrer le fichier .ui au Bac pratique ?
+R : Dans le dossier de travail portant ton numéro d'inscription, à côté du fichier .py. loadUi cherche le fichier dans le dossier courant, qui est celui du programme quand tu l'exécutes depuis Thonny.
+
+======================================================================
+# Les algorithmes classiques du Bac informatique
+URL : https://infopourbac.netlify.app/algorithmes-classiques/
+
+Les sujets du Bac pratique changent chaque année, mais ils s'appuient presque toujours sur les mêmes briques : tester si un nombre est premier , calculer un PGCD , parcourir les chiffres d'un nombre, vérifier un palindrome , convertir en binaire . Voici ces algorithmes de référence, en notation officielle et en Python.
+
+En bref :
+- Premier : aucun diviseur entre 2 et n DIV 2.
+- Chiffres d'un nombre : n % 10 puis n // 10 .
+- PGCD : algorithme d'Euclide avec le reste a % b .
+- Binaire : restes successifs de la division par 2, lus à l'envers.
+
+## Tester si un nombre est premier
+
+Un entier n ≥ 2 est premier s'il n'est divisible que par 1 et par lui-même. On cherche un diviseur d entre 2 et n DIV 2 ; si on n'en trouve aucun, n est premier.
+ Algorithme Fonction Premier(n : Entier ) : Booléen 
+ Début 
+ Si n < 2 Alors 
+ Retourner Faux 
+ Fin Si 
+ d ← 2 
+ Tant que (d ≤ n DIV 2 ) ET (n MOD d ≠ 0 ) Faire 
+ d ← d + 1 
+ Fin Tant que 
+ Retourner d > n DIV 2 
+ Fin 
+
+ Traduction en Python Copier def premier(n):
+ if n < 2 :
+ return False 
+ d = 2 
+ while d <= n // 2 and n % d != 0 :
+ d = d + 1 
+ return d > n // 2
+
+## Somme des diviseurs et nombre parfait
+
+Un nombre est parfait s'il est égal à la somme de ses diviseurs autres que lui-même : 6 = 1 + 2 + 3 et 28 = 1 + 2 + 4 + 7 + 14.
+ Algorithme Fonction SommeDiv(n : Entier ) : Entier 
+ Début 
+ s ← 0 
+ Pour d de 1 à n DIV 2 Faire 
+ Si n MOD d = 0 Alors 
+ s ← s + d
+ Fin Si 
+ Fin Pour 
+ Retourner s
+ Fin 
+
+ Fonction Parfait(n : Entier ) : Booléen 
+ Début 
+ Retourner SommeDiv(n) = n
+ Fin 
+
+ Traduction en Python Copier def somme_div(n):
+ s = 0 
+ for d in range ( 1 , n // 2 + 1 ):
+ if n % d == 0 :
+ s = s + d
+ return s
+
+ def parfait(n):
+ return somme_div(n) == n
+
+## PGCD par l'algorithme d'Euclide
+
+Le PGCD de a et b est le plus grand entier qui divise les deux. Euclide remplace (a, b) par (b, a MOD b) jusqu'à ce que b soit nul. Deux nombres sont premiers entre eux si leur PGCD vaut 1.
+ Algorithme Fonction PGCD(a, b : Entier ) : Entier 
+ Début 
+ Tant que b ≠ 0 Faire 
+ r ← a MOD b
+ a ← b
+ b ← r
+ Fin Tant que 
+ Retourner a
+ Fin 
+
+ Traduction en Python Copier def pgcd(a, b):
+ while b != 0 :
+ r = a % b
+ a = b
+ b = r
+ return a 
+
+ Déroulement pour PGCD(48, 18) a b r = a MOD b 
+ 48 18 12 
+ 18 12 6 
+ 12 6 0 
+ 6 0 — → PGCD = 6
+
+## Somme des chiffres d'un nombre
+
+Algorithme Fonction SommeChiffres(n : Entier ) : Entier 
+ Début 
+ s ← 0 
+ Tant que n ≠ 0 Faire 
+ s ← s + n MOD 10 
+ n ← n DIV 10 
+ Fin Tant que 
+ Retourner s
+ Fin 
+
+ Traduction en Python Copier def somme_chiffres(n):
+ s = 0 
+ while n != 0 :
+ s = s + n % 10 
+ n = n // 10 
+ return s
+
+## Inverse d'un nombre et palindrome numérique
+
+L'inverse de 1234 est 4321. Un nombre est palindrome s'il est égal à son inverse (121, 4554).
+ Algorithme Fonction Inverse(n : Entier ) : Entier 
+ Début 
+ inv ← 0 
+ Tant que n ≠ 0 Faire 
+ inv ← inv * 10 + n MOD 10 
+ n ← n DIV 10 
+ Fin Tant que 
+ Retourner inv
+ Fin 
+
+ Traduction en Python Copier def inverse(n):
+ inv = 0 
+ while n != 0 :
+ inv = inv * 10 + n % 10 
+ n = n // 10 
+ return inv
+
+ def palindrome_nombre(n):
+ return inverse(n) == n
+
+## Palindrome sur une chaîne
+
+On compare les caractères des deux extrémités en avançant vers le milieu. C'est l'algorithme donné dans le sujet du Bac pratique 2025.
+ Algorithme Fonction Palindrome(CH : Chaîne ) : Booléen 
+ Début 
+ i ← 0 
+ j ← Long(CH) - 1 
+ Tant que (i < j) ET (CH[i] = CH[j]) Faire 
+ i ← i + 1 
+ j ← j - 1 
+ Fin Tant que 
+ Retourner i ≥ j
+ Fin 
+
+ Traduction en Python Copier def palindrome(ch):
+ i = 0 
+ j = len (ch) - 1 
+ while i < j and ch[i] == ch[j]:
+ i = i + 1 
+ j = j - 1 
+ return i >= j 
+
+ Astuce pour le Bac Pour tester un nombre, il suffit de le convertir : palindrome(str(n)) .
+
+## Conversions décimal ↔ binaire
+
+Pour écrire n en base 2, on divise n par 2 et on garde les restes, que l'on place à gauche du résultat. Exemple : 13 → 1101.
+ Algorithme Fonction Binaire(n : Entier ) : Chaîne 
+ Début 
+ ch ← "" 
+ Répéter 
+ ch ← Convch(n MOD 2 ) + ch
+ n ← n DIV 2 
+ Jusqu'à n = 0 
+ Retourner ch
+ Fin 
+
+ Traduction en Python Copier def binaire(n):
+ ch = "" 
+ while True :
+ ch = str (n % 2 ) + ch
+ n = n // 2 
+ if n == 0 :
+ break 
+ return ch 
+
+ Binaire → décimal Fonction Decimal(ch : Chaîne ) : Entier 
+ Début 
+ d ← 0 
+ Pour i de 0 à Long(ch) - 1 Faire 
+ d ← d * 2 + Valeur(ch[i])
+ Fin Pour 
+ Retourner d
+ Fin 
+
+ Binaire → décimal en Python Copier def decimal(ch):
+ d = 0 
+ for i in range ( len (ch)):
+ d = d * 2 + int (ch[i])
+ return d 
+
+ À savoir Avec la boucle Répéter, la conversion de 0 donne bien "0". Python propose aussi bin(13) , qui renvoie '0b1101' , mais au Bac on attend en général l'algorithme.
+
+## Factorielle
+
+n! = 1 × 2 × … × n, avec 0! = 1. C'est un accumulateur de produit : il commence à 1.
+ Algorithme Fonction Fact(n : Entier ) : Entier 
+ Début 
+ f ← 1 
+ Pour i de 2 à n Faire 
+ f ← f * i
+ Fin Pour 
+ Retourner f
+ Fin 
+
+ Traduction en Python Copier def fact(n):
+ f = 1 
+ for i in range ( 2 , n + 1 ):
+ f = f * i
+ return f
+
+## À retenir
+- Ces fonctions se combinent : « premier palindrome » = premier(n) and palindrome(str(n)) .
+- Chiffres d'un nombre : % 10 et // 10 ; ou conversion en chaîne avec str() .
+- Écris chaque brique dans sa propre fonction : c'est la solution modulaire attendue.
+
+## Questions fréquentes
+Q : Comment tester si un nombre est premier en Python ?
+R : On cherche un diviseur d entre 2 et n // 2. Si aucun d ne vérifie n % d == 0 (et si n ≥ 2), le nombre est premier.
+Q : Comment convertir un nombre en binaire sans bin() ?
+R : On divise successivement par 2 et on ajoute chaque reste à gauche d'une chaîne : ch = str(n % 2) + ch , puis n = n // 2 , jusqu'à n = 0.
+Q : Comment calculer le PGCD de deux nombres en Python ?
+R : Avec l'algorithme d'Euclide : tant que b est non nul, on remplace (a, b) par (b, a % b) ; le PGCD est la dernière valeur de a.
+
+======================================================================
+# Glossaire
+
+- Accumulateur : Variable qui cumule des valeurs au fil d'une boucle (somme, produit). Une somme commence à 0, un produit à 1.
+- Affectation : Action qui range une valeur dans une variable : x ← 5 en algorithme, x = 5 en Python.
+- Algorithme : Suite finie et ordonnée d'instructions permettant de résoudre un problème.
+- Booléen : Type qui ne prend que deux valeurs : Vrai/Faux (True/False en Python).
+- Boucle infinie : Boucle dont la condition ne devient jamais fausse : le programme ne s'arrête pas.
+- Chaîne de caractères : Suite de caractères entre guillemets, de type str en Python.
+- Compteur : Variable qui compte le nombre de fois qu'un événement se produit : nb ← nb + 1.
+- Concaténation : Mise bout à bout de deux chaînes avec l'opérateur +.
+- Constante : Objet dont la valeur ne change pas pendant l'exécution.
+- DIV : Opérateur du quotient de la division entière ; // en Python.
+- Dichotomie : Méthode de recherche dans un tableau trié qui divise l'intervalle de recherche par deux à chaque étape.
+- Fonction : Sous-programme qui renvoie un résultat avec Retourner (return).
+- Indentation : Décalage du code vers la droite (4 espaces) qui délimite les blocs en Python.
+- Indice : Position d'un élément dans un tableau ou une chaîne ; il commence à 0.
+- MOD : Opérateur du reste de la division entière ; % en Python.
+- Module Play : Au Bac pratique, la fonction exécutée au clic sur le bouton de l'interface.
+- Paramètre effectif : Valeur ou variable transmise à un sous-programme au moment de l'appel.
+- Paramètre formel : Nom utilisé dans l'en-tête d'un sous-programme pour désigner une donnée reçue.
+- Passage par référence : Mode de passage (noté @) qui permet au sous-programme de modifier la variable de l'appelant.
+- Passage par valeur : Mode de passage où le sous-programme travaille sur une copie de la donnée.
+- Permutation : Échange du contenu de deux variables, à l'aide d'une variable auxiliaire.
+- Procédure : Sous-programme qui réalise une action sans renvoyer de résultat.
+- PyQt5 : Bibliothèque Python qui permet de créer et de piloter des interfaces graphiques Qt.
+- Qt Designer : Logiciel qui permet de dessiner une interface graphique à la souris et de l'enregistrer en fichier .ui.
+- Solution modulaire : Programme découpé en sous-programmes, chacun chargé d'une tâche précise. Exigée au Bac pratique.
+- Sous-programme : Bloc d'instructions nommé que l'on peut appeler plusieurs fois : fonction ou procédure.
+- Structure conditionnelle : Structure qui exécute des instructions selon qu'une condition est vraie ou fausse (Si, Selon).
+- Structure itérative : Structure qui répète des instructions (Pour, Tant que, Répéter).
+- TDNT : Tableau de déclaration des nouveaux types, où l'on définit par exemple un type tableau.
+- TDO : Tableau de déclaration des objets : la liste des variables et constantes d'un algorithme avec leur type.
+- TDOL : Tableau de déclaration des objets locaux d'un sous-programme.
+- Tableau : Structure qui regroupe un nombre fixe d'éléments de même type, repérés par un indice.
+- Tri : Opération qui range les éléments d'un tableau dans un ordre croissant ou décroissant.
+- Variable : Nom désignant une case mémoire dont la valeur peut changer pendant l'exécution.
+- array : Fonction de la bibliothèque numpy qui crée un tableau : T = array([int()] * n).
+- loadUi : Fonction de PyQt5 qui charge une interface dessinée dans Qt Designer (fichier .ui).
+- numpy : Bibliothèque Python utilisée au Bac pour créer des tableaux avec array.
+- objectName : Nom donné à un composant dans Qt Designer ; c'est le nom utilisé dans le code Python.
+- range : Fonction Python qui génère une suite d'entiers pour une boucle for ; la borne de fin est exclue.

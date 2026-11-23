@@ -1,0 +1,16 @@
+{
+  "name": "InfoPourBac",
+  "short_name": "InfoPourBac",
+  "lang": "fr-TN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#c8102e",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

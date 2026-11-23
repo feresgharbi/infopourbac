@@ -1,0 +1,8 @@
+# Site statique : on publie le dossier public/ généré par « python build.py ».
+[build]
+  publish = "public"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
