@@ -17,8 +17,8 @@ const CAROUSELS = [
     id: '0-intro-plateforme',
     slides: [
       { type: 'cover', kicker: `Bac Sciences · Informatique`,
-        title: `تقرا باك علمي و الإنفو <em>مخلّطتك</em>؟`,
-        sub: `عندنا الحل، و بلاش. اسحب 👈` },
+        title: `اقرا معانا ${L("l'informatique")}…<br><em>و بلاش !</em>`,
+        sub: `إذا أنت ${L('Bac scientifique')}، احنا عملنالك ${L('infopourbac.com')} : الموقع وين تنجم تتعلم ${L("l'informatique")} من الصفر حتى للباك.` },
       { title: `المشكلة اللي يعيشها كل تلميذ`, body: `<div class="cards3">
           <div><b>💸 الـ${L('cours')} الخاصة غالية</b><span>مش كل واحد ينجم يخلّص ساعات إنفو كل جمعة.</span></div>
           <div><b>🌀 المواقع مخلّطة</b><span>برنامج ناقص، أمثلة مش متاع الباك التونسي، إشهار في كل بلاصة.</span></div>
