@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const puppeteer = require(process.env.PUPPETEER_PATH || 'puppeteer-core');
 
-const SITE = 'infopourbac.netlify.app';
+const SITE = 'infopourbac.com';
 const OUT = __dirname;
 
 // ------------------------------------------------------------ coloration du code

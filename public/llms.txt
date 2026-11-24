@@ -4,23 +4,23 @@
 
 ## Cours (dans l'ordre)
 
-- [Introduction à l'algorithmique et à Python](https://infopourbac.netlify.app/cours/introduction-algorithmique-python/): Algorithme, programme et Python : le point de départ du Bac informatique. Structure d'un algorithme, TDO, installation de Python, Thonny, numpy et PyQt5.
-- [Les actions élémentaires : affectation, entrées et sorties](https://infopourbac.netlify.app/cours/entrees-sorties-affectation/): Affectation (←), lecture (Lire / input) et écriture (Écrire / print) : les actions de base, avec leur traduction Python pour le Bac Sciences en Tunisie.
-- [Variables, types, constantes et opérateurs](https://infopourbac.netlify.app/cours/variables-types-operateurs/): Types Entier, Réel, Booléen, Chaîne, conversions, constantes et opérateurs DIV, MOD, ET, OU, NON, avec leur traduction Python. Cours du Bac Sciences.
-- [Les chaînes de caractères en algorithme et en Python](https://infopourbac.netlify.app/cours/chaines-de-caracteres/): Indices, parcours, concaténation et fonctions Long, Pos, Convch, Valeur, Estnum, Sous_chaine, Effacer, Majus traduites en Python. Cours Bac Tunisie.
-- [Les structures conditionnelles : Si, Sinon, Selon](https://infopourbac.netlify.app/cours/structures-conditionnelles/): Structures conditionnelles : Si simple, complète, généralisée et Selon, traduites en Python avec if, else, elif et match. Cours Bac Sciences Tunisie.
-- [Les structures itératives : Pour, Tant que, Répéter](https://infopourbac.netlify.app/cours/structures-iteratives/): Boucles Pour (for, range), Tant que (while) et Répéter … Jusqu'à en Python, compteurs, accumulateurs et saisie contrôlée. Cours Bac Sciences Tunisie.
-- [Les sous-programmes : fonctions et procédures](https://infopourbac.netlify.app/cours/sous-programmes-fonctions-procedures/): Fonctions, procédures, paramètres, passage par référence (@), TDOL et solution modulaire : le chapitre clé du Bac pratique, traduit en Python.
-- [Les tableaux à une dimension (vecteurs) avec numpy](https://infopourbac.netlify.app/cours/tableaux/): Déclarer un tableau (TDNT), le créer avec numpy array, le remplir, l'afficher, calculer somme, moyenne, maximum. Cours du Bac Sciences en Tunisie.
-- [Les algorithmes de tri : sélection, bulles, insertion](https://infopourbac.netlify.app/cours/algorithmes-de-tri/): Les 3 tris du programme : principe, algorithme en notation officielle, code Python et déroulement pas à pas sur un exemple. Cours Bac Tunisie.
-- [Les algorithmes de recherche : séquentielle et dichotomique](https://infopourbac.netlify.app/cours/algorithmes-de-recherche/): Chercher une valeur dans un tableau : recherche séquentielle et dichotomique, avec algorithme, code Python et déroulement. Cours Bac Sciences.
-- [Les interfaces graphiques avec Qt Designer et PyQt5](https://infopourbac.netlify.app/cours/interfaces-graphiques-pyqt5/): Qt Designer, QLabel, QLineEdit, QPushButton, loadUi, text(), setText() et module Play : tout pour l'interface du Bac pratique en Tunisie.
+- [Introduction à l'algorithmique et à Python](https://infopourbac.com/cours/introduction-algorithmique-python/): Algorithme, programme et Python : le point de départ du Bac informatique. Structure d'un algorithme, TDO, installation de Python, Thonny, numpy et PyQt5.
+- [Les actions élémentaires : affectation, entrées et sorties](https://infopourbac.com/cours/entrees-sorties-affectation/): Affectation (←), lecture (Lire / input) et écriture (Écrire / print) : les actions de base, avec leur traduction Python pour le Bac Sciences en Tunisie.
+- [Variables, types, constantes et opérateurs](https://infopourbac.com/cours/variables-types-operateurs/): Types Entier, Réel, Booléen, Chaîne, conversions, constantes et opérateurs DIV, MOD, ET, OU, NON, avec leur traduction Python. Cours du Bac Sciences.
+- [Les chaînes de caractères en algorithme et en Python](https://infopourbac.com/cours/chaines-de-caracteres/): Indices, parcours, concaténation et fonctions Long, Pos, Convch, Valeur, Estnum, Sous_chaine, Effacer, Majus traduites en Python. Cours Bac Tunisie.
+- [Les structures conditionnelles : Si, Sinon, Selon](https://infopourbac.com/cours/structures-conditionnelles/): Structures conditionnelles : Si simple, complète, généralisée et Selon, traduites en Python avec if, else, elif et match. Cours Bac Sciences Tunisie.
+- [Les structures itératives : Pour, Tant que, Répéter](https://infopourbac.com/cours/structures-iteratives/): Boucles Pour (for, range), Tant que (while) et Répéter … Jusqu'à en Python, compteurs, accumulateurs et saisie contrôlée. Cours Bac Sciences Tunisie.
+- [Les sous-programmes : fonctions et procédures](https://infopourbac.com/cours/sous-programmes-fonctions-procedures/): Fonctions, procédures, paramètres, passage par référence (@), TDOL et solution modulaire : le chapitre clé du Bac pratique, traduit en Python.
+- [Les tableaux à une dimension (vecteurs) avec numpy](https://infopourbac.com/cours/tableaux/): Déclarer un tableau (TDNT), le créer avec numpy array, le remplir, l'afficher, calculer somme, moyenne, maximum. Cours du Bac Sciences en Tunisie.
+- [Les algorithmes de tri : sélection, bulles, insertion](https://infopourbac.com/cours/algorithmes-de-tri/): Les 3 tris du programme : principe, algorithme en notation officielle, code Python et déroulement pas à pas sur un exemple. Cours Bac Tunisie.
+- [Les algorithmes de recherche : séquentielle et dichotomique](https://infopourbac.com/cours/algorithmes-de-recherche/): Chercher une valeur dans un tableau : recherche séquentielle et dichotomique, avec algorithme, code Python et déroulement. Cours Bac Sciences.
+- [Les interfaces graphiques avec Qt Designer et PyQt5](https://infopourbac.com/cours/interfaces-graphiques-pyqt5/): Qt Designer, QLabel, QLineEdit, QPushButton, loadUi, text(), setText() et module Play : tout pour l'interface du Bac pratique en Tunisie.
 
 ## Ressources
 
-- [Les algorithmes classiques du Bac informatique](https://infopourbac.netlify.app/algorithmes-classiques/): Les fonctions qui reviennent au Bac pratique : premier, diviseurs, parfait, PGCD, somme des chiffres, palindrome, binaire, factorielle. Algorithme + Python.
-- [Glossaire](https://infopourbac.netlify.app/glossaire/): définitions des termes d'algorithmique et de Python du programme.
+- [Les algorithmes classiques du Bac informatique](https://infopourbac.com/algorithmes-classiques/): Les fonctions qui reviennent au Bac pratique : premier, diviseurs, parfait, PGCD, somme des chiffres, palindrome, binaire, factorielle. Algorithme + Python.
+- [Glossaire](https://infopourbac.com/glossaire/): définitions des termes d'algorithmique et de Python du programme.
 
 ## Optional
 
-- [Texte intégral du cours](https://infopourbac.netlify.app/llms-full.txt)
+- [Texte intégral du cours](https://infopourbac.com/llms-full.txt)

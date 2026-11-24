@@ -1,11 +1,11 @@
 # InfoPourBac : texte intégral du cours
 
-Source : https://infopourbac.netlify.app — mis à jour le 19 novembre 2026.
+Source : https://infopourbac.com — mis à jour le 24 novembre 2026.
 
 
 ======================================================================
 # Introduction à l'algorithmique et à Python
-URL : https://infopourbac.netlify.app/cours/introduction-algorithmique-python/
+URL : https://infopourbac.com/cours/introduction-algorithmique-python/
 
 Un algorithme est une suite finie et ordonnée d'instructions qui permet de résoudre un problème. Au Bac scientifique en Tunisie, on écrit d'abord la solution sous forme d'algorithme, puis on la traduit en Python , le langage officiel de l'épreuve pratique.
 
@@ -96,7 +96,7 @@ R : Thonny est l'éditeur le plus utilisé dans les lycées tunisiens : il est s
 
 ======================================================================
 # Les actions élémentaires : affectation, entrées et sorties
-URL : https://infopourbac.netlify.app/cours/entrees-sorties-affectation/
+URL : https://infopourbac.com/cours/entrees-sorties-affectation/
 
 Tout algorithme est construit avec trois actions élémentaires : l' affectation ( ← , en Python = ), la lecture d'une donnée ( Lire , en Python input() ) et l' écriture d'un résultat ( Écrire , en Python print() ).
 
@@ -207,7 +207,7 @@ R : Parce que ce sont deux chaînes de caractères : l'opérateur + les met bout
 
 ======================================================================
 # Variables, types, constantes et opérateurs
-URL : https://infopourbac.netlify.app/cours/variables-types-operateurs/
+URL : https://infopourbac.com/cours/variables-types-operateurs/
 
 Une variable est un nom qui désigne une case de la mémoire contenant une valeur. Chaque valeur a un type (entier, réel, booléen, caractère, chaîne) qui détermine les opérations possibles. Au Bac, il faut connaître chaque type, chaque opérateur et leur traduction en Python.
 
@@ -329,7 +329,7 @@ R : / fait une division réelle (7 / 2 = 3.5) ; // donne le quotient entier (7 /
 
 ======================================================================
 # Les chaînes de caractères en algorithme et en Python
-URL : https://infopourbac.netlify.app/cours/chaines-de-caracteres/
+URL : https://infopourbac.com/cours/chaines-de-caracteres/
 
 Une chaîne de caractères est une suite de caractères entre guillemets. Chaque caractère a une position, son indice , qui commence à 0 . Les chaînes sont partout dans les sujets du Bac : on parcourt les chiffres d'un nombre, on teste un palindrome, on construit un message.
 
@@ -435,7 +435,7 @@ R : Avec ch.isdigit() , l'équivalent de Estnum(ch) . C'est la vérification la 
 
 ======================================================================
 # Les structures conditionnelles : Si, Sinon, Selon
-URL : https://infopourbac.netlify.app/cours/structures-conditionnelles/
+URL : https://infopourbac.com/cours/structures-conditionnelles/
 
 Une structure conditionnelle permet d'exécuter des instructions seulement si une condition est vraie. Le programme officiel distingue quatre formes : Si simple , Si complète (Si…Sinon), Si généralisée (Sinon Si) et Selon . En Python, elles s'écrivent avec if , else , elif et match .
 
@@ -561,7 +561,7 @@ R : Parce que le bloc qui suit un if , elif ou else n'est pas correctement déca
 
 ======================================================================
 # Les structures itératives : Pour, Tant que, Répéter
-URL : https://infopourbac.netlify.app/cours/structures-iteratives/
+URL : https://infopourbac.com/cours/structures-iteratives/
 
 Une structure itérative (ou boucle) répète un bloc d'instructions. On utilise la boucle Pour quand le nombre de répétitions est connu, et les boucles Tant que ou Répéter … Jusqu'à quand il dépend d'une condition.
 
@@ -678,7 +678,7 @@ R : for s'utilise quand on connaît le nombre de tours ; while quand on répète
 
 ======================================================================
 # Les sous-programmes : fonctions et procédures
-URL : https://infopourbac.netlify.app/cours/sous-programmes-fonctions-procedures/
+URL : https://infopourbac.com/cours/sous-programmes-fonctions-procedures/
 
 Un sous-programme est un bloc d'instructions nommé, que l'on écrit une fois et que l'on appelle autant de fois que nécessaire. Une fonction renvoie un résultat ; une procédure réalise une action sans rien renvoyer. Au Bac pratique, une solution modulaire (découpée en sous-programmes) est exigée.
 
@@ -837,7 +837,7 @@ R : Que le programme doit être découpé en sous-programmes (fonctions et proc�
 
 ======================================================================
 # Les tableaux à une dimension (vecteurs) avec numpy
-URL : https://infopourbac.netlify.app/cours/tableaux/
+URL : https://infopourbac.com/cours/tableaux/
 
 Un tableau (ou vecteur) est une structure qui regroupe, sous un seul nom, un nombre fixe d'éléments de même type . Chaque élément est repéré par son indice , de 0 à n − 1. Au Bac, on crée les tableaux avec la fonction array de la bibliothèque numpy .
 
@@ -985,7 +985,7 @@ R : n − 1, car les indices commencent à 0.
 
 ======================================================================
 # Les algorithmes de tri : sélection, bulles, insertion
-URL : https://infopourbac.netlify.app/cours/algorithmes-de-tri/
+URL : https://infopourbac.com/cours/algorithmes-de-tri/
 
 Trier un tableau, c'est ranger ses éléments dans un ordre (croissant ou décroissant). Le programme étudie trois méthodes : le tri par sélection (on place le minimum au début), le tri à bulles (on échange les voisins mal rangés) et le tri par insertion (on insère chaque élément à sa place).
 
@@ -1146,7 +1146,7 @@ R : Le tri par insertion : chaque élément n'a besoin que de très peu de déca
 
 ======================================================================
 # Les algorithmes de recherche : séquentielle et dichotomique
-URL : https://infopourbac.netlify.app/cours/algorithmes-de-recherche/
+URL : https://infopourbac.com/cours/algorithmes-de-recherche/
 
 Rechercher, c'est déterminer si une valeur x se trouve dans un tableau. La recherche séquentielle examine les éléments un par un et fonctionne sur n'importe quel tableau. La recherche dichotomique divise l'intervalle de recherche par deux à chaque étape, mais exige un tableau trié .
 
@@ -1248,7 +1248,7 @@ R : Dans la version booléenne, elle renvoie False (la boucle s'arrête avec i =
 
 ======================================================================
 # Les interfaces graphiques avec Qt Designer et PyQt5
-URL : https://infopourbac.netlify.app/cours/interfaces-graphiques-pyqt5/
+URL : https://infopourbac.com/cours/interfaces-graphiques-pyqt5/
 
 Au Bac pratique, le programme Python est piloté par une interface graphique : une fenêtre dessinée avec Qt Designer , enregistrée dans un fichier .ui , puis chargée en Python avec PyQt5 . Un clic sur un bouton lance le module Play , qui lit les saisies, les vérifie, calcule et affiche le résultat.
 
@@ -1370,7 +1370,7 @@ R : Dans le dossier de travail portant ton numéro d'inscription, à côté du f
 
 ======================================================================
 # Les algorithmes classiques du Bac informatique
-URL : https://infopourbac.netlify.app/algorithmes-classiques/
+URL : https://infopourbac.com/algorithmes-classiques/
 
 Les sujets du Bac pratique changent chaque année, mais ils s'appuient presque toujours sur les mêmes briques : tester si un nombre est premier , calculer un PGCD , parcourir les chiffres d'un nombre, vérifier un palindrome , convertir en binaire . Voici ces algorithmes de référence, en notation officielle et en Python.
 

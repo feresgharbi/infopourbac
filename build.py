@@ -20,10 +20,10 @@ from pages import ALGOS, GLOSSAIRE  # noqa: E402
 from figs import build_figs  # noqa: E402
 from thumbs import thumb  # noqa: E402
 
-BASE = 'https://infopourbac.netlify.app'
+BASE = 'https://infopourbac.com'
 SITE = 'InfoPourBac'
-UPDATED = '2026-11-19'
-UPDATED_FR = '19 novembre 2026'
+UPDATED = '2026-11-24'
+UPDATED_FR = '24 novembre 2026'
 OUT = os.path.join(ROOT, 'public')
 
 CHAPTERS = CHAPTERS_A + CHAPTERS_B
@@ -433,8 +433,11 @@ def about_page():
 def notfound_page():
     body = '''<div class="wrap narrow"><header class="ahead"><p class="chapnum">Erreur 404</p><h1>Cette page n'existe pas</h1>
     <p class="lead">Le lien est peut-être ancien. Reprends depuis le <a href="/cours/">sommaire du cours</a> ou la <a href="/">page d'accueil</a>.</p></header></div>'''
-    return layout('404.html', 'Page introuvable | ' + SITE, "La page demandée n'existe pas.", body, [ORG]).replace(
+    html = layout('404.html', 'Page introuvable | ' + SITE, "La page demandée n'existe pas.", body, [ORG]).replace(
         '<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">', '<meta name="robots" content="noindex">')
+    # Une page d'erreur n'a ni canonical ni hreflang.
+    html = re.sub(r'<link rel="(canonical|alternate)"[^>]*>\s*', '', html)
+    return html
 
 
 def write(rel, content, binary=False):

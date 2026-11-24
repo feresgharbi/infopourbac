@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Recherche séquentielle et dichotomique | Bac</title>
 <meta name="description" content="Chercher une valeur dans un tableau : recherche séquentielle et dichotomique, avec algorithme, code Python et déroulement. Cours Bac Sciences.">
-<link rel="canonical" href="https://infopourbac.netlify.app/cours/algorithmes-de-recherche/">
-<link rel="alternate" hreflang="fr-TN" href="https://infopourbac.netlify.app/cours/algorithmes-de-recherche/">
-<link rel="alternate" hreflang="x-default" href="https://infopourbac.netlify.app/cours/algorithmes-de-recherche/">
+<link rel="canonical" href="https://infopourbac.com/cours/algorithmes-de-recherche/">
+<link rel="alternate" hreflang="fr-TN" href="https://infopourbac.com/cours/algorithmes-de-recherche/">
+<link rel="alternate" hreflang="x-default" href="https://infopourbac.com/cours/algorithmes-de-recherche/">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
 <meta name="author" content="InfoPourBac">
 <meta name="theme-color" content="#c8102e">
@@ -16,14 +16,14 @@
 <meta property="og:locale" content="fr_TN">
 <meta property="og:title" content="Recherche séquentielle et dichotomique | Bac">
 <meta property="og:description" content="Chercher une valeur dans un tableau : recherche séquentielle et dichotomique, avec algorithme, code Python et déroulement. Cours Bac Sciences.">
-<meta property="og:url" content="https://infopourbac.netlify.app/cours/algorithmes-de-recherche/">
-<meta property="og:image" content="https://infopourbac.netlify.app/assets/og.png">
+<meta property="og:url" content="https://infopourbac.com/cours/algorithmes-de-recherche/">
+<meta property="og:image" content="https://infopourbac.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Recherche séquentielle et dichotomique | Bac">
 <meta name="twitter:description" content="Chercher une valeur dans un tableau : recherche séquentielle et dichotomique, avec algorithme, code Python et déroulement. Cours Bac Sciences.">
-<meta name="twitter:image" content="https://infopourbac.netlify.app/assets/og.png">
+<meta name="twitter:image" content="https://infopourbac.com/assets/og.png">
 <meta name="geo.region" content="TN">
 <meta name="geo.placename" content="Tunisie">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://infopourbac.netlify.app/#org","name":"InfoPourBac","url":"https://infopourbac.netlify.app/","logo":{"@type":"ImageObject","url":"https://infopourbac.netlify.app/assets/logo.png","width":512,"height":512},"description":"Plateforme tunisienne de cours d'informatique pour le Bac scientifique : algorithmique et Python."},{"@type":["Article","LearningResource"],"@id":"https://infopourbac.netlify.app/cours/algorithmes-de-recherche/#article","headline":"Les algorithmes de recherche : séquentielle et dichotomique","description":"Chercher une valeur dans un tableau : recherche séquentielle et dichotomique, avec algorithme, code Python et déroulement. Cours Bac Sciences.","inLanguage":"fr-TN","datePublished":"2026-11-19","dateModified":"2026-11-19","author":{"@id":"https://infopourbac.netlify.app/#org"},"publisher":{"@id":"https://infopourbac.netlify.app/#org"},"mainEntityOfPage":"https://infopourbac.netlify.app/cours/algorithmes-de-recherche/","image":"https://infopourbac.netlify.app/assets/og.png","learningResourceType":"Cours","educationalLevel":"4ème année secondaire – Baccalauréat (sections scientifiques)","audience":{"@type":"EducationalAudience","educationalRole":"student"},"timeRequired":"PT4M","isAccessibleForFree":true,"about":[{"@type":"Thing","name":"Algorithmique"},{"@type":"Thing","name":"Python"},{"@type":"Thing","name":"Baccalauréat tunisien"}],"articleSection":["La recherche séquentielle","La recherche dichotomique","Comparer les deux méthodes","Rechercher dans une chaîne"],"isPartOf":{"@id":"https://infopourbac.netlify.app/cours/#course"},"position":10},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle est la condition pour utiliser la recherche dichotomique ?","acceptedAnswer":{"@type":"Answer","text":"Le tableau doit être trié. Sinon, comparer x à l'élément du milieu ne permet pas de savoir dans quelle moitié il se trouve."}},{"@type":"Question","name":"Comment calculer le milieu en Python ?","acceptedAnswer":{"@type":"Answer","text":"Avec la division entière : mil = (deb + fin) // 2 , qui correspond à (deb + fin) DIV 2 ."}},{"@type":"Question","name":"Que renvoie la recherche séquentielle si la valeur est absente ?","acceptedAnswer":{"@type":"Answer","text":"Dans la version booléenne, elle renvoie False (la boucle s'arrête avec i = n). Dans la version qui renvoie une position, on renvoie conventionnellement -1."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://infopourbac.netlify.app/"},{"@type":"ListItem","position":2,"name":"Cours","item":"https://infopourbac.netlify.app/cours/"},{"@type":"ListItem","position":3,"name":"Algorithmes de recherche","item":"https://infopourbac.netlify.app/cours/algorithmes-de-recherche/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://infopourbac.com/#org","name":"InfoPourBac","url":"https://infopourbac.com/","logo":{"@type":"ImageObject","url":"https://infopourbac.com/assets/logo.png","width":512,"height":512},"description":"Plateforme tunisienne de cours d'informatique pour le Bac scientifique : algorithmique et Python."},{"@type":["Article","LearningResource"],"@id":"https://infopourbac.com/cours/algorithmes-de-recherche/#article","headline":"Les algorithmes de recherche : séquentielle et dichotomique","description":"Chercher une valeur dans un tableau : recherche séquentielle et dichotomique, avec algorithme, code Python et déroulement. Cours Bac Sciences.","inLanguage":"fr-TN","datePublished":"2026-11-24","dateModified":"2026-11-24","author":{"@id":"https://infopourbac.com/#org"},"publisher":{"@id":"https://infopourbac.com/#org"},"mainEntityOfPage":"https://infopourbac.com/cours/algorithmes-de-recherche/","image":"https://infopourbac.com/assets/og.png","learningResourceType":"Cours","educationalLevel":"4ème année secondaire – Baccalauréat (sections scientifiques)","audience":{"@type":"EducationalAudience","educationalRole":"student"},"timeRequired":"PT4M","isAccessibleForFree":true,"about":[{"@type":"Thing","name":"Algorithmique"},{"@type":"Thing","name":"Python"},{"@type":"Thing","name":"Baccalauréat tunisien"}],"articleSection":["La recherche séquentielle","La recherche dichotomique","Comparer les deux méthodes","Rechercher dans une chaîne"],"isPartOf":{"@id":"https://infopourbac.com/cours/#course"},"position":10},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle est la condition pour utiliser la recherche dichotomique ?","acceptedAnswer":{"@type":"Answer","text":"Le tableau doit être trié. Sinon, comparer x à l'élément du milieu ne permet pas de savoir dans quelle moitié il se trouve."}},{"@type":"Question","name":"Comment calculer le milieu en Python ?","acceptedAnswer":{"@type":"Answer","text":"Avec la division entière : mil = (deb + fin) // 2 , qui correspond à (deb + fin) DIV 2 ."}},{"@type":"Question","name":"Que renvoie la recherche séquentielle si la valeur est absente ?","acceptedAnswer":{"@type":"Answer","text":"Dans la version booléenne, elle renvoie False (la boucle s'arrête avec i = n). Dans la version qui renvoie une position, on renvoie conventionnellement -1."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://infopourbac.com/"},{"@type":"ListItem","position":2,"name":"Cours","item":"https://infopourbac.com/cours/"},{"@type":"ListItem","position":3,"name":"Algorithmes de recherche","item":"https://infopourbac.com/cours/algorithmes-de-recherche/"}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -53,7 +53,7 @@
       <p class="chapnum"><b class="bignum">10</b><span>Chapitre 10 sur 11</span></p>
       <div class="prog" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="now"></i><i></i></div>
       <h1>Les algorithmes de recherche : séquentielle et dichotomique</h1>
-      <p class="meta">4 min de lecture · 4 parties · mis à jour le <time datetime="2026-11-19">19 novembre 2026</time></p>
+      <p class="meta">4 min de lecture · 4 parties · mis à jour le <time datetime="2026-11-24">24 novembre 2026</time></p>
     </div>
     <div class="cheadart"><svg class="th" viewBox="0 0 160 100" aria-hidden="true" focusable="false"><defs><marker id="th10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" class="thh"/></marker></defs><rect class="l" x="14" y="50" width="22" height="26" rx="0"/><rect class="l" x="36" y="50" width="22" height="26" rx="0"/><rect class="l" x="58" y="50" width="22" height="26" rx="0"/><rect class="a" x="80" y="50" width="22" height="26" rx="0"/><rect class="l" x="102" y="50" width="22" height="26" rx="0"/><rect class="l" x="124" y="50" width="22" height="26" rx="0"/><circle class="ln" cx="91" cy="34" r="13" fill="none" style="stroke-width:2.2"/><polyline class="ln thick" points="100,43 110,53"/></svg></div>
   </div>
@@ -129,7 +129,7 @@
       <li><a href="/a-propos/">À propos</a></li>
     </ul></div>
   </div>
-  <div class="wrap fbottom">© 2026 InfoPourBac · Mis à jour le 19 novembre 2026</div>
+  <div class="wrap fbottom">© 2026 InfoPourBac · Mis à jour le 24 novembre 2026</div>
 </footer>
 <script src="/assets/site.js" defer></script>
 </body>
