@@ -80,3 +80,15 @@ Cours gratuit : lien en bio.
 - **TikTok** : publie en mode « Photo », ajoute un son tendance à faible volume et laisse le défilement automatique.
 - **Instagram** : la 1ʳᵉ slide fait tout. Réponds aux commentaires dans la première heure.
 - Épingle le carrousel n° 2 en haut de ton profil : c'est une fiche de référence que les élèves reviendront voir.
+
+## 0 — Bienvenue (généré avec Swai, dialecte tunisien)
+
+Dossier : `instagram/0-bienvenue/` (5 slides, 4:5)
+
+مرحبا بيكم في InfoPourBac 👋
+موقع الإنفو للباك علمي، بلاش 100% و من غير تسجيل.
+كل الكورات، الخوارزميات الكلاسيكية و قاموس المصطلحات في بلاصة واحدة، و الخوارزمية جنب Python باش تفهم بالساهل.
+دخّل توا 👉 infopourbac.netlify.app
+شارك مع صحابك اللي يقراو باك علمي 🎓
+
+#BacTunisie #BacScientifique #Informatique #Python #Algorithmique #InfoPourBac
