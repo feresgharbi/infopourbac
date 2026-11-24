@@ -16,24 +16,24 @@ const CAROUSELS = [
   {
     id: '0-intro-plateforme',
     slides: [
-      { type: 'cover', kicker: `Bac Sciences · Informatique`,
-        title: `اقرا معانا ${L("l'informatique")}…<br><em>و بلاش !</em>`,
-        sub: `إذا أنت ${L('Bac scientifique')}، احنا عملنالك ${L('infopourbac.com')} : الموقع وين تنجم تتعلم ${L("l'informatique")} من الصفر حتى للباك.` },
+      { type: 'cover', kicker: `Bac scientifique · Informatique`,
+        title: `موقع تتعلّم منّو ${L("l'informatique")}…<br><em>من الصفر حتى للتميّز</em>`,
+        sub: `إذا أنت ${L('Bac scientifique')}، احنا عملنالك ${L('infopourbac.com')} : كل ${L("l'Info")} متاع الـ${L('Bac')}، مشروحة بالساهل، و بلاش.` },
       { title: `المشكلة اللي يعيشها كل تلميذ`, body: `<div class="cards3">
-          <div><b>💸 الـ${L('cours')} الخاصة غالية</b><span>مش كل واحد ينجم يخلّص ساعات إنفو كل جمعة.</span></div>
-          <div><b>🌀 المواقع مخلّطة</b><span>برنامج ناقص، أمثلة مش متاع الباك التونسي، إشهار في كل بلاصة.</span></div>
+          <div><b>💸 ${L("l'étude")} غالية</b><span>مش كل واحد ينجم يخلّص ساعات ${L("étude")} كل جمعة.</span></div>
+          <div><b>🌀 المواقع مخلّطة</b><span>برنامج ناقص، أمثلة مش متاع الـ${L('Bac')} التونسي، إشهار في كل بلاصة.</span></div>
           <div><b>⏳ و الـ${L('Bac')} ما يستنّاش</b><span>تلقى روحك تراجع في آخر لحظة من غير منهج واضح.</span></div></div>` },
-      { title: `${L('InfoPourBac')} : منصة بلاش لإنفو الباك علمي`, body: `<p>موقع تونسي، معمول للتلامذة متاع <b>الباك علمي</b>، فيه <b>كل برنامج الإنفو</b> مشروح بالساهل، بالدارجة متاعنا في الشرح و بالفرنسية في المصطلحات كيما في القسم.</p>
+      { title: `${L('InfoPourBac : Info Bac scientifique')}<br>مشروحة بالساهل… <em>و بلاش</em>`, body: `<p>موقع تونسي، معمول لتلامذة الـ<b>${L('Bac scientifique')}</b>، فيه <b>كل برنامج الـ${L('Info')}</b> مشروح بالساهل : الشرح بالدارجة متاعنا، و المصطلحات بالفرنسية كيما في القسم.</p>
           <div class="tipline"><b>${L('11 cours')}</b> · ${L('Algorithme')} و ${L('Python')} جنب بعضهم · الخوارزميات الكلاسيكية · قاموس المصطلحات</div>` },
       { title: `شنوّة تلقى فيه بالضبط ؟`, body: `<div class="list">
           <div><i>1</i><div><b>${L('Cours')} كاملين</b><span>من المتغيرات حتى لـ${L('PyQt5')}، بنفس ترتيب البرنامج الرسمي.</span></div></div>
           <div><i>2</i><div><b>${L('Algorithme → Python')}</b><span>كل مثال مكتوب بالزوز، باش تفهم الترجمة مرة وحدة.</span></div></div>
-          <div><i>3</i><div><b>الخوارزميات الكلاسيكية</b><span>التري، البحث، الأعداد الأولية… اللي يطيحو في الباك.</span></div></div>
+          <div><i>3</i><div><b>الخوارزميات الكلاسيكية</b><span>التري، البحث، الأعداد الأولية… اللي يطيحو في الـ${L('Bac')}.</span></div></div>
           <div><i>4</i><div><b>الغلطات اللي تنقّص نقاط</b><span>في كل ${L('cours')}، إطار « piège fréquent » و فيشة « à retenir ».</span></div></div></div>` },
       { type: 'cta', title: `بلاش ${L('100%')} و من غير تسجيل`,
         sub: `لا حساب، لا كارت، لا إشهار. تحلّ الموقع و تبدا تقرا توّا، على التليفون ولّا على الـ${L('PC')}.`,
         chips: [L('0 DT'), 'بلا تسجيل', L('11 cours'), L('Algorithme + Python')],
-        save: `شارك الموقع مع صحابك اللي يقراو باك علمي 🎓` },
+        save: `شارك الموقع مع صحابك اللي يقراو ${L('Bac scientifique')} 🎓` },
     ],
   },
 ];
@@ -73,7 +73,7 @@ body::before{content:"";position:absolute;right:72px;top:0;bottom:0;width:4px;ba
 .brand svg{width:56px;height:56px}.brand b{color:#b8102a;font-weight:600}
 .count{font-family:"IBM Plex Mono";font-size:30px;color:#6a707a;background:#fff;border:2px solid #e4e2db;border-radius:999px;padding:6px 22px;direction:ltr}
 .main{flex:1;display:flex;flex-direction:column;justify-content:${slide.type || fmt === 'tiktok' ? 'center' : 'flex-start'};min-height:0}
-h1{font-size:${96 * F.scale}px;line-height:1.25;margin:0 0 40px;font-weight:700}
+h1{font-size:${fmt === 'tiktok' ? 86 : 96}px;line-height:1.25;margin:0 0 40px;font-weight:700}
 h1 em,h2 em{font-style:normal;color:#b8102a}
 h2{font-size:${64 * F.scale}px;line-height:1.3;margin:0 0 36px;font-weight:600}
 .kicker{display:inline-flex;align-items:center;gap:16px;font-size:32px;font-weight:500;color:#3b414b;background:#fff;border:2px solid #e4e2db;border-radius:999px;padding:10px 14px 10px 28px;margin:0 0 44px;align-self:flex-start}
