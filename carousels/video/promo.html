@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ar-TN" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden}
+body{font-family:"IBM Plex Sans Arabic",Lexend,sans-serif;color:#171a1f;background:#fbfaf6;position:relative;
+ background-image:linear-gradient(rgba(31,95,168,.08) 2px,transparent 2px),linear-gradient(90deg,rgba(31,95,168,.08) 2px,transparent 2px);background-size:54px 54px}
+body::before{content:"";position:absolute;right:72px;top:0;bottom:0;width:4px;background:#b8102a;opacity:.45}
+.lt{direction:ltr;unicode-bidi:isolate;font-family:Lexend,sans-serif}
+.red{color:#b8102a}
+.scene{position:absolute;inset:0;padding:0 120px 0 100px;display:flex;flex-direction:column;justify-content:center;opacity:0}
+.brand{position:absolute;top:150px;right:120px;display:flex;align-items:center;gap:18px;font-weight:600;font-size:44px;direction:ltr;font-family:Lexend;opacity:0}
+.brand svg{width:64px;height:64px}.brand b{color:#b8102a;font-weight:600}
+.foot{position:absolute;bottom:330px;left:0;right:0;text-align:center;font:500 34px Lexend;color:#6a707a;direction:ltr;opacity:0}
+
+h1{font-size:104px;line-height:1.25;margin:0;font-weight:700}
+h2{font-size:84px;line-height:1.3;margin:0 0 40px;font-weight:600}
+.sub{font-size:48px;color:#3b414b;font-weight:300;line-height:1.6;margin:30px 0 0}
+.line{display:block;opacity:0;transform:translateY(60px)}
+
+/* ---------- scene 1 : hook ---------- */
+#s1 .line:nth-child(1){animation:up .6s cubic-bezier(.2,.8,.2,1) .3s forwards}
+#s1 .line:nth-child(2){animation:up .6s cubic-bezier(.2,.8,.2,1) 1.1s forwards}
+#s1 .line:nth-child(3){animation:up .6s cubic-bezier(.2,.8,.2,1) 2.0s forwards}
+#s1{animation:show .01s 0s forwards, hide .4s 3.6s forwards}
+
+/* ---------- scene 2 : logo ---------- */
+#s2{align-items:center;text-align:center;animation:show .01s 4s forwards, hide .4s 7.6s forwards}
+.logo{width:260px;height:260px;border-radius:64px;background:#c8102e;display:grid;place-items:center;box-shadow:0 40px 80px -30px rgba(184,16,42,.6);transform:scale(.2);opacity:0;animation:pop .7s cubic-bezier(.2,1.4,.3,1) 4.1s forwards}
+.logo svg{width:170px;height:170px}
+.wordmark{font:700 110px Lexend;direction:ltr;margin-top:50px;opacity:0;transform:translateY(40px);animation:up .6s cubic-bezier(.2,.8,.2,1) 4.7s forwards}
+.wordmark b{color:#b8102a}
+#s2 .sub{opacity:0;transform:translateY(40px);animation:up .6s cubic-bezier(.2,.8,.2,1) 5.3s forwards;font-size:52px}
+.badge{display:inline-block;margin-top:50px;background:#171a1f;color:#fff;border-radius:999px;padding:18px 48px;font-size:44px;font-weight:600;opacity:0;transform:scale(.6);animation:pop .5s cubic-bezier(.2,1.4,.3,1) 6.0s forwards}
+
+/* ---------- scene 3 : algo -> python ---------- */
+#s3{animation:show .01s 8s forwards, hide .4s 13.6s forwards}
+#s3 h2{opacity:0;transform:translateY(40px);animation:up .6s cubic-bezier(.2,.8,.2,1) 8.1s forwards}
+.code{border-radius:28px;overflow:hidden;direction:ltr;text-align:left;opacity:0;transform:translateY(40px)}
+.code header{font:500 32px Lexend;padding:20px 34px;display:flex;align-items:center;gap:16px}
+.code header i{width:18px;height:18px;border-radius:50%}
+.code pre{margin:0;padding:26px 34px 30px;font:500 38px/1.6 "IBM Plex Mono",monospace;white-space:pre;min-height:270px}
+.al{background:#fff;border:3px solid #e4e2db}.al header{color:#6a707a;border-bottom:3px solid #e4e2db}.al header i{background:#b8102a}
+.py{background:#1d2128;color:#e6e8ec}.py header{color:#a3abb8;border-bottom:3px solid #2c323c}.py header i{background:#f4c542}
+.al{animation:up .5s cubic-bezier(.2,.8,.2,1) 8.6s forwards}
+.py{animation:up .5s cubic-bezier(.2,.8,.2,1) 10.6s forwards}
+.arrow{text-align:center;font-size:90px;color:#b8102a;line-height:1;margin:14px 0;opacity:0;animation:show .3s 10.3s forwards}
+.k{color:#a3123a;font-weight:600}.a{color:#b8102a;font-weight:600}.s{color:#2e7031}.n{color:#a34f06}
+.py .k{color:#d6a2ff}.py .b{color:#8ab4ff}.py .s{color:#a8db8f}.py .n{color:#ffab70}
+/* typewriter: each span revealed by width clip */
+.tw{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;max-width:0}
+.al .tw:nth-of-type(1){animation:type .6s steps(24) 9.0s forwards}
+.al .tw:nth-of-type(2){animation:type .5s steps(12) 9.6s forwards}
+.al .tw:nth-of-type(3){animation:type .4s steps(8) 10.1s forwards}
+.py .tw:nth-of-type(1){animation:type .7s steps(26) 11.0s forwards}
+.py .tw:nth-of-type(2){animation:type .5s steps(12) 11.7s forwards}
+.tip{margin-top:40px;background:#fff;border:3px solid #e4e2db;border-right:10px solid #b8102a;border-radius:20px;padding:26px 34px;font-size:40px;color:#2b3038;opacity:0;transform:translateY(40px);animation:up .5s cubic-bezier(.2,.8,.2,1) 12.4s forwards}
+.tip b{font-weight:600;color:#171a1f}
+
+/* ---------- scene 4 : features ---------- */
+#s4{animation:show .01s 14s forwards, hide .4s 19.6s forwards}
+#s4 h2{opacity:0;transform:translateY(40px);animation:up .6s cubic-bezier(.2,.8,.2,1) 14.1s forwards}
+.feat{display:flex;flex-direction:column;gap:26px}
+.feat div{display:flex;align-items:center;gap:28px;background:#fff;border:3px solid #e4e2db;border-radius:26px;padding:30px 36px;font-size:46px;opacity:0;transform:translateX(80px)}
+.feat i{flex:none;width:72px;height:72px;border-radius:50%;background:#b8102a;color:#fff;font:600 36px/72px Lexend;text-align:center;font-style:normal;direction:ltr}
+.feat b{font-weight:600}
+.feat div:nth-child(1){animation:slide .5s cubic-bezier(.2,.8,.2,1) 14.7s forwards}
+.feat div:nth-child(2){animation:slide .5s cubic-bezier(.2,.8,.2,1) 15.4s forwards}
+.feat div:nth-child(3){animation:slide .5s cubic-bezier(.2,.8,.2,1) 16.1s forwards}
+.feat div:nth-child(4){animation:slide .5s cubic-bezier(.2,.8,.2,1) 16.8s forwards}
+.feat div:nth-child(5){animation:slide .5s cubic-bezier(.2,.8,.2,1) 17.5s forwards}
+
+/* ---------- scene 5 : CTA ---------- */
+#s5{align-items:center;text-align:center;animation:show .01s 20s forwards}
+#s5 h1{opacity:0;transform:translateY(40px);animation:up .6s cubic-bezier(.2,.8,.2,1) 20.1s forwards;font-size:104px}
+#s5 .sub{opacity:0;transform:translateY(40px);animation:up .6s cubic-bezier(.2,.8,.2,1) 20.7s forwards}
+.url{margin-top:70px;direction:ltr;font:600 74px "IBM Plex Mono";background:#b8102a;color:#fff;border-radius:30px;padding:36px 60px;box-shadow:0 30px 60px -20px #b8102a;opacity:0;transform:scale(.6);animation:pop .6s cubic-bezier(.2,1.4,.3,1) 21.4s forwards, pulse 1.2s ease-in-out 22.2s infinite}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:60px}
+.chips span{background:#fff;border:3px solid #e4e2db;border-radius:999px;padding:16px 38px;font-size:40px;font-weight:500;color:#3b414b;opacity:0;transform:scale(.6)}
+.chips span:nth-child(1){animation:pop .4s cubic-bezier(.2,1.4,.3,1) 22.0s forwards}
+.chips span:nth-child(2){animation:pop .4s cubic-bezier(.2,1.4,.3,1) 22.2s forwards}
+.chips span:nth-child(3){animation:pop .4s cubic-bezier(.2,1.4,.3,1) 22.4s forwards}
+.chips span:nth-child(4){animation:pop .4s cubic-bezier(.2,1.4,.3,1) 22.6s forwards}
+.share{margin-top:60px;font-size:40px;color:#6a707a;opacity:0;animation:show .5s 23.2s forwards}
+.brand{animation:show .5s 8s forwards, hide .3s 19.8s forwards}
+.foot{animation:show .5s 8s forwards, hide .3s 19.8s forwards}
+
+/* progress bar */
+.bar{position:absolute;left:0;top:0;height:14px;background:#b8102a;width:0;animation:grow 25s linear 0s forwards}
+
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes slide{to{opacity:1;transform:none}}
+@keyframes pop{to{opacity:1;transform:none}}
+@keyframes show{to{opacity:1}}
+@keyframes hide{to{opacity:0}}
+@keyframes type{to{max-width:1000px}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes grow{to{width:100%}}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+
+<div class="brand"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#c8102e"/><path d="M15 12l-6 8 6 8M25 12l6 8-6 8" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Info<b>Pour</b>Bac</span></div>
+<div class="foot">infopourbac.com</div>
+
+<!-- 1. hook (0–4s) -->
+<section class="scene" id="s1">
+  <h1><span class="line">تقرا باك علمي ؟</span>
+  <span class="line" style="white-space:nowrap">و <span class="lt">l'informatique</span></span>
+  <span class="line red">مخلّطتك ؟</span></h1>
+</section>
+
+<!-- 2. logo (4–8s) -->
+<section class="scene" id="s2">
+  <div class="logo"><svg viewBox="0 0 40 40"><path d="M15 12l-6 8 6 8M25 12l6 8-6 8" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="wordmark">Info<b>Pour</b>Bac</div>
+  <p class="sub">منصة تونسية باش تقرا <span class="lt">l'informatique</span><br>متاع الباك علمي… <b class="red">و بلاش</b></p>
+  <span class="badge"><span class="lt">0 DT</span> · بلا تسجيل</span>
+</section>
+
+<!-- 3. algo -> python (8–14s) -->
+<section class="scene" id="s3">
+  <h2><span class="lt">Algorithme</span> و <span class="lt">Python</span> جنب بعضهم</h2>
+  <figure class="code al"><header><i></i>Algorithme</header><pre><span class="tw"><span class="k">Pour</span> i <span class="k">de</span> <span class="n">1</span> <span class="k">à</span> n <span class="k">Faire</span></span>
+<span class="tw">    <span class="k">Écrire</span>(i)</span>
+<span class="tw"><span class="k">Fin Pour</span></span></pre></figure>
+  <div class="arrow">↓</div>
+  <figure class="code py"><header><i></i>Python</header><pre><span class="tw"><span class="k">for</span> i <span class="k">in</span> <span class="b">range</span>(<span class="n">1</span>, n + <span class="n">1</span>):</span>
+<span class="tw">    <span class="b">print</span>(i)</span></pre></figure>
+  <div class="tip">كل مثال مكتوب <b>بالزوز</b>، باش تفهم الترجمة مرّة وحدة.</div>
+</section>
+
+<!-- 4. features (14–20s) -->
+<section class="scene" id="s4">
+  <h2>شنوّة تلقى في الموقع ؟</h2>
+  <div class="feat">
+    <div><i>1</i><span><b><span class="lt">11 cours</span></b> كاملين، بنفس ترتيب البرنامج</span></div>
+    <div><i>2</i><span>الخوارزميات الكلاسيكية : التري، البحث…</span></div>
+    <div><i>3</i><span><b>الغلطات</b> اللي تنقّص نقاط في الباك</span></div>
+    <div><i>4</i><span>قاموس المصطلحات <span class="lt">FR</span> ⇄ <span class="lt">Python</span></span></div>
+    <div><i>5</i><span><b><span class="lt">PyQt5</span></b> : الـ<span class="lt">interface</span> خطوة بخطوة</span></div>
+  </div>
+</section>
+
+<!-- 5. CTA (20–25s) -->
+<section class="scene" id="s5">
+  <h1>بلاش <span class="lt">100%</span><br>و من غير تسجيل</h1>
+  <p class="sub">تحلّ الموقع و تبدا تقرا توّا،<br>على التليفون ولّا على الـ<span class="lt">PC</span></p>
+  <div class="url">infopourbac.com</div>
+  <div class="chips"><span class="lt">0 DT</span><span>بلا تسجيل</span><span class="lt">11 cours</span><span class="lt">Algorithme + Python</span></div>
+  <p class="share">شارك مع صحابك اللي يقراو باك علمي 🎓</p>
+</section>
+
+<script>
+// Deterministic seeking: pause every animation and set its currentTime.
+window.seek = function (ms) {
+  for (const a of document.getAnimations()) { a.pause(); a.currentTime = ms; }
+};
+window.addEventListener('load', () => { for (const a of document.getAnimations()) a.pause(); });
+</script>
+</body>
+</html>
