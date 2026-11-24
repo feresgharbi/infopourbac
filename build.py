@@ -22,6 +22,7 @@ from thumbs import thumb  # noqa: E402
 
 BASE = 'https://infopourbac.com'
 SITE = 'InfoPourBac'
+GA_ID = 'G-G503TQX6VJ'  # Google Analytics 4
 UPDATED = '2026-11-24'
 UPDATED_FR = '24 novembre 2026'
 OUT = os.path.join(ROOT, 'public')
@@ -150,6 +151,8 @@ def layout(slug, title, desc, body, schema, og_type='article', crumbs=None):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
 {ld({'@context': 'https://schema.org', '@graph': schema})}
 </head>
 <body>
