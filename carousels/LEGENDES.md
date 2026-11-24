@@ -92,3 +92,18 @@ Dossier : `instagram/0-bienvenue/` (5 slides, 4:5)
 شارك مع صحابك اللي يقراو باك علمي 🎓
 
 #BacTunisie #BacScientifique #Informatique #Python #Algorithmique #InfoPourBac
+
+## 0 — Intro plateforme (dialecte tunisien, généré par make-ar.js)
+
+Dossiers : `instagram/0-intro-plateforme/` (1080×1350) et `tiktok/0-intro-plateforme/` (1080×1920), 5 slides.
+
+تقرا باك علمي و الإنفو مخلّطتك؟ 😵‍💫
+InfoPourBac : منصة تونسية بلاش 100% لإنفو الباك علمي.
+✅ 11 cours كاملين، بنفس ترتيب البرنامج الرسمي
+✅ Algorithme و Python جنب بعضهم في كل مثال
+✅ الخوارزميات الكلاسيكية اللي يطيحو في الباك
+✅ الغلطات اللي تنقّص نقاط، مشروحة
+لا حساب، لا كارت، لا إشهار. تحلّ و تقرا توّا 👉 infopourbac.com
+شارك مع صحابك اللي يقراو باك علمي 🎓
+
+#BacTunisie #BacSciences #Informatique #Python #Algorithmique #InfoPourBac #باك_علمي #باكالوريا_تونس
