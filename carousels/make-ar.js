@@ -36,6 +36,34 @@ const CAROUSELS = [
         save: `شارك الموقع مع صحابك اللي يقراو ${L('Bac scientifique')} 🎓` },
     ],
   },
+  {
+    id: '1-bellech',
+    slides: [
+      { type: 'free', kicker: `Bac scientifique · Informatique`,
+        price: `0 DT`, label: `ثمن الموقع الكل`,
+        title: `كل ${L("l'Info")} متاع الـ${L('Bac')}…<br><em>بلاش. ${L('100%')}.</em>`,
+        sub: `لا ${L('abonnement')}، لا تسجيل، لا كارت. تحلّ ${L('infopourbac.com')} و تقرا.` },
+      { title: `« بلاش » عندنا يعني <em>بلاش بالحق</em>`, body: `<div class="list check">
+          <div><i>✓</i><div><b>${L('11 cours')} كاملين</b><span>كل برنامج الـ${L('Info')} متاع الـ${L('Bac scientifique')}، من أول ${L('cours')} حتى للآخر.</span></div></div>
+          <div><i>✓</i><div><b>الخوارزميات و الأمثلة</b><span>${L('Algorithme')} و ${L('Python')} جنب بعضهم، مع الحلول.</span></div></div>
+          <div><i>✓</i><div><b>قاموس المصطلحات</b><span>كل كلمة بالفرنسية مشروحة بالدارجة.</span></div></div>
+          <div><i>✓</i><div><b>ما فيهاش ${L('version premium')}</b><span>ما تلقاش ${L('cours')} مسكّر ولّا « ادفع باش تكمّل ».</span></div></div></div>` },
+      { title: `قارن و شوف`, body: `<div class="cmp">
+          <div class="h"></div><div class="h">${L("l'étude")}</div><div class="h red">${L('InfoPourBac')}</div>
+          <div class="k">الثمن</div><div><span>تخلّص كل ساعة</span></div><div class="red"><span><b>${L('0 DT')}</b></span></div>
+          <div class="k">الوقت</div><div><span>جمعة في الأسبوع</span></div><div class="red"><span><b>${L('24h/24')}</b>، وقت ما تحب</span></div>
+          <div class="k">البلاصة</div><div><span>تتنقّل</span></div><div class="red"><span><b>تليفونك</b> ولّا ${L('PC')}</span></div>
+          <div class="k">البرنامج</div><div><span>حسب الأستاذ</span></div><div class="red"><span><b>كل برنامج</b> الـ${L('Bac')}</span></div></div>
+          <p class="note">* الـ${L("étude")} باهية إذا تنجم عليها. الموقع معمول باش <b>كل واحد</b> يلقى الـ${L('Info')} مشروحة، حتى بلا فلوس.</p>` },
+      { title: `علاش بلاش ؟`, body: `<p>خاطر الـ<b>${L('Info')}</b> ماهيش صعيبة، أما غالية باش تتعلّمها. تلميذ في تونس ما يلزمش <b>يطيح في الـ${L('Bac')}</b> خاطر ما عندوش فلوس باش يعمل ${L("étude")}.</p>
+          <p>الموقع معمول من تونسي، لتلامذة تونس. <b>لا إشهار، لا بيع ${L('cours')}، لا جمع معلومات.</b></p>
+          <div class="tipline"><b>الهدف :</b> أي تلميذ ${L('Bac scientifique')}، في أي ولاية، عندو نفس الـ${L('cours')} المشروحة بالساهل.</div>` },
+      { type: 'cta', title: `بلاش. توّا. <em>لكل الناس.</em>`,
+        sub: `حلّ الموقع من التليفون و ابدا من أوّل ${L('cours')}. ما تخلّص شي، ما تسجّل شي.`,
+        chips: [L('0 DT'), 'بلا تسجيل', 'بلا إشهار', L('11 cours')],
+        save: `عندك صاحبك يقرا ${L('Bac scientifique')} و يخمّم في الـ${L("étude")} ؟ ابعثلو الموقع 🎓` },
+    ],
+  },
 ];
 
 // ------------------------------------------------------------ gabarit
@@ -51,6 +79,10 @@ function page(slide, i, n, fmt) {
   let main;
   if (slide.type === 'cover') {
     main = `<div class="cover"><p class="kicker"><span class="flag"></span>${L(slide.kicker)}</p><h1>${slide.title}</h1><p class="sub">${slide.sub}</p></div>`;
+  } else if (slide.type === 'free') {
+    main = `<div class="cover"><p class="kicker"><span class="flag"></span>${L(slide.kicker)}</p>
+      <div class="price"><b>${slide.price}</b><span>${slide.label}</span></div>
+      <h1>${slide.title}</h1><p class="sub">${slide.sub}</p></div>`;
   } else if (slide.type === 'cta') {
     main = `<div class="cta"><h2>${slide.title}</h2><p class="sub">${slide.sub}</p>
       <div class="url">${SITE}</div><div class="chips">${slide.chips.map(c => `<span>${c}</span>`).join('')}</div>
@@ -92,6 +124,21 @@ h2{font-size:${64 * F.scale}px;line-height:1.3;margin:0 0 36px;font-weight:600}
 .list b{display:block;font-size:36px;color:#171a1f;margin-bottom:2px}
 .list span{font-size:${30 * F.scale}px;color:#3b414b;font-weight:300}
 .cover h1{margin-bottom:44px}
+.free h1,.price~h1{font-size:${fmt === 'tiktok' ? 78 : 84}px;margin-bottom:34px}
+.price{display:flex;align-items:center;gap:30px;margin:0 0 40px;align-self:flex-start}
+.price b{direction:ltr;font:700 ${fmt === 'tiktok' ? 150 : 140}px/1 Lexend;color:#fff;background:#b8102a;border-radius:28px;padding:22px 40px 30px;letter-spacing:-.02em;box-shadow:0 24px 50px -22px #b8102a;transform:rotate(-2deg)}
+.price span{font-size:34px;font-weight:500;color:#3b414b;max-width:260px;line-height:1.4}
+.list.check i{background:#1f8a4c;font-size:34px}
+.cmp{display:grid;grid-template-columns:170px 1fr 1.25fr;gap:0;background:#fff;border:2px solid #e4e2db;border-radius:20px;overflow:hidden;font-size:${34 * F.scale}px;font-weight:300;color:#3b414b}
+.cmp>div{padding:${fmt === 'tiktok' ? 30 : 26}px 24px;border-bottom:2px solid #e4e2db;display:flex;align-items:center;line-height:1.4}
+.cmp>div:nth-last-child(-n+3){border-bottom:0}
+.cmp .h{font-weight:600;color:#171a1f;font-size:${36 * F.scale}px;background:#f3f1ea;text-align:center}
+.cmp .k{font-weight:600;color:#171a1f;background:#faf9f4}
+.cmp .red{color:#b8102a;background:#fff5f6}
+.cmp .red b{color:#b8102a;font-weight:700}
+.cmp .h.red{background:#b8102a;color:#fff}
+.note{font-size:${31 * F.scale}px;color:#6a707a;margin:30px 0 0;font-weight:300}
+.note b{color:#171a1f;font-weight:600}
 .cta{display:flex;flex-direction:column;gap:34px}
 .cta h2{font-size:${80 * F.scale}px;margin:0}
 .url{align-self:flex-start;direction:ltr;font:600 ${46 * F.scale}px "IBM Plex Mono";background:#b8102a;color:#fff;border-radius:20px;padding:24px 36px;box-shadow:0 14px 30px -14px #b8102a}

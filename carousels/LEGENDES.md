@@ -108,3 +108,27 @@ Vidéo : `video/infopourbac-promo.mp4` (1080×1920, 25 s).
 شارك مع صحابك اللي يقراو Bac scientifique 🎓
 
 #BacTunisie #BacScientifique #Informatique #Python #Algorithmique #InfoPourBac #باكالوريا_تونس
+
+## 1 — Bellech (le gratuit mis en avant)
+
+Fichiers : `carousels/instagram/1-bellech/01-05.png` et `carousels/tiktok/1-bellech/01-05.png`.
+
+**Légende :**
+
+0 DT. 🔴
+هذا ثمن الموقع الكل.
+
+كل l'Info متاع الـBac scientifique، مشروحة بالساهل بالدارجة، و بلاش 100%.
+لا abonnement، لا تسجيل، لا كارت، لا إشهار، لا « version premium ».
+
+شنوّة تلقى فيه ؟
+✓ 11 cours كاملين (Algorithme + Python جنب بعضهم)
+✓ الخوارزميات الكلاسيكية اللي يطيحو في الـBac مع الحلول
+✓ قاموس المصطلحات بالفرنسية مشروح بالدارجة
+
+علاش بلاش ؟ خاطر تلميذ في تونس ما يلزمش يطيح في الـInfo خاطر ما عندوش فلوس باش يعمل étude.
+
+👉 infopourbac.com (اللينك في البيو)
+شارك البوست مع صاحبك اللي يقرا Bac scientifique 🎓
+
+#BacScientifique #Bac2027 #InfoPourBac #Informatique #Python #Algorithme #BacTunisie #تونس #باكالوريا
