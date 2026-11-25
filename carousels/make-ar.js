@@ -48,13 +48,11 @@ const CAROUSELS = [
           <div><i>✓</i><div><b>الخوارزميات و الأمثلة</b><span>${L('Algorithme')} و ${L('Python')} جنب بعضهم، مع الحلول.</span></div></div>
           <div><i>✓</i><div><b>قاموس المصطلحات</b><span>كل كلمة بالفرنسية مشروحة بالدارجة.</span></div></div>
           <div><i>✓</i><div><b>ما فيهاش ${L('version premium')}</b><span>ما تلقاش ${L('cours')} مسكّر ولّا « ادفع باش تكمّل ».</span></div></div></div>` },
-      { title: `قارن و شوف`, body: `<div class="cmp">
-          <div class="h"></div><div class="h">${L("l'étude")}</div><div class="h red">${L('InfoPourBac')}</div>
-          <div class="k">الثمن</div><div><span>تخلّص كل ساعة</span></div><div class="red"><span><b>${L('0 DT')}</b></span></div>
-          <div class="k">الوقت</div><div><span>جمعة في الأسبوع</span></div><div class="red"><span><b>${L('24h/24')}</b>، وقت ما تحب</span></div>
-          <div class="k">البلاصة</div><div><span>تتنقّل</span></div><div class="red"><span><b>تليفونك</b> ولّا ${L('PC')}</span></div>
-          <div class="k">البرنامج</div><div><span>حسب الأستاذ</span></div><div class="red"><span><b>كل برنامج</b> الـ${L('Bac')}</span></div></div>
-          <p class="note">* الـ${L("étude")} باهية إذا تنجم عليها. الموقع معمول باش <b>كل واحد</b> يلقى الـ${L('Info')} مشروحة، حتى بلا فلوس.</p>` },
+      { title: `كيفاش تقرا على ${L('InfoPourBac')} ؟`, body: `<div class="cards3">
+          <div><b>💰 الثمن : ${L('0 DT')}</b><span>ما تخلّص شي، لا توّا لا بعد. الموقع بلاش لكل الناس.</span></div>
+          <div><b>🕐 الوقت : ${L('24h/24')}</b><span>تقرا وقت ما تحب، الليل ولّا النهار، بالسرعة اللي تريّحك.</span></div>
+          <div><b>📱 البلاصة : تليفونك ولّا ${L('PC')}</b><span>تحلّ الموقع وين ما كنت، في الدار ولّا في الكار.</span></div>
+          <div><b>📚 البرنامج : كل برنامج الـ${L('Bac')}</b><span>${L('11 cours')} بنفس ترتيب البرنامج الرسمي، من أول ${L('cours')} حتى للآخر.</span></div></div>` },
       { title: `علاش بلاش ؟`, body: `<p>خاطر الـ<b>${L('Info')}</b> ماهيش صعيبة، أما غالية باش تتعلّمها. تلميذ في تونس ما يلزمش <b>يطيح في الـ${L('Bac')}</b> خاطر ما عندوش فلوس باش يعمل ${L("étude")}.</p>
           <p>الموقع معمول من تونسي، لتلامذة تونس. <b>لا إشهار، لا بيع ${L('cours')}، لا جمع معلومات.</b></p>
           <div class="tipline"><b>الهدف :</b> أي تلميذ ${L('Bac scientifique')}، في أي ولاية، عندو نفس الـ${L('cours')} المشروحة بالساهل.</div>` },
